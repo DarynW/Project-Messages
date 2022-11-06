@@ -14,6 +14,23 @@ class Database {
         this.fileName = fileName;
     }
 
+    public static String arrayListToString(ArrayList<String> arrayList) {
+        String string = "";
+        for (int i = 0; i < arrayList.size(); i++) {
+            string += arrayList.get(i) + "{$#}";
+        }
+        return string;
+    }
+
+    public static ArrayList<String> stringToArrayList(String string) {
+        ArrayList<String> arrayList = new ArrayList<String>();
+        String[] stringArray = string.split("\\{\\$\\#\\}");
+        for (int i = 0; i < stringArray.length; i++) {
+            arrayList.add(stringArray[i]);
+        }
+        return arrayList;
+    }
+
     private ArrayList<String[][]> readFile() throws Exception {
         ArrayList<String> lines = new ArrayList<String>();
         try {
