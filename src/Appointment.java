@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Appointment {
     private Seller seller;
     private ArrayList<String> buyerRequests;
-    private Buyer confirmedBuyer;
+    private String confirmedBuyer;
     private String time;
 
     public Appointment(Seller seller, ArrayList<String> buyerRequests, Buyer confirmedBuyers) {
@@ -28,11 +28,11 @@ public class Appointment {
         this.buyerRequests = buyerRequests;
     }
 
-    public Buyer getConfirmedBuyer() {
+    public String getConfirmedBuyer() {
         return confirmedBuyer;
     }
 
-    public void setConfirmedBuyer(Buyer confirmedBuyer) {
+    public void setConfirmedBuyer(String confirmedBuyer) {
         this.confirmedBuyer = confirmedBuyer;
     }
 
