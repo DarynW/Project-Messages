@@ -6,14 +6,14 @@ public class Seller {
 
     public Seller(String name) {
         this.name = name;
-        cal = new Calendar(this);
+        cal = new Calendar();
 
     }
 
     public boolean createCalendar() {
         //check to make sure there is no calendar first
         if (cal == null) {
-            cal = new Calendar(this);
+            cal = new Calendar();
             return true;
         } else return false;
     }
@@ -46,14 +46,14 @@ public class Seller {
         for (Appointment app : cal.getAppointments()) {
             if (time.equals(app.getTime())) {
                 //searches through buyer for one that matches name
-                for (Buyer buyer : app.getBuyerRequests()) {
-                    if (buyer.getName().equals(name)) {
+                for (String buyer : app.getBuyerRequests()) {
+                    if (buyer.equals(name)) {
                         //sets the confirmed buyer to the one with the right name
                         app.setConfirmedBuyer(buyer);
                         //clears buyer requests
                         app.clearBuyerRequests();
                         //returns the name of the confirmed buyer;
-                        return buyer.getName();
+                        return buyer;
                     }
                 }
             }
