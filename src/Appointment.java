@@ -9,7 +9,7 @@ public class Appointment {
     public Appointment(Seller seller, ArrayList<String> buyerRequests, Buyer confirmedBuyers) {
         this.seller = seller;
         this.buyerRequests = buyerRequests;
-        this.confirmedBuyer = confirmedBuyers
+        this.confirmedBuyer = confirmedBuyers;
     }
 
     public Seller getSeller() {
