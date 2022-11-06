@@ -226,4 +226,17 @@ class Database {
         }
         return false;
     }
+
+    public String searchByField(String field, String value) throws Exception {
+        ArrayList<String[][]> documents = readFile();
+        for (String[][] document : documents) {
+            // iterate through each key value pair
+            for (String[] fieldPair : document) {
+                if (fieldPair[0].equals(field) && fieldPair[1].equals(value)) {
+                    return document[0][1];
+                }
+            }
+        }
+        return null;
+    }
 }
