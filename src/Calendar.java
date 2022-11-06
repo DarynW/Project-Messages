@@ -1,6 +1,6 @@
 public class Calendar {
 
-    public Calendar(Seller seller) {
+    public Calendar() {
         //TODO implement calendar constructor
     }
 

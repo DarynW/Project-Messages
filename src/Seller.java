@@ -6,14 +6,14 @@ public class Seller {
 
     public Seller(String name) {
         this.name = name;
-        cal = new Calendar(this);
+        cal = new Calendar();
 
     }
 
     public boolean createCalendar() {
         //check to make sure there is no calendar first
         if (cal == null) {
-            cal = new Calendar(this);
+            cal = new Calendar();
             return true;
         } else return false;
     }
