@@ -6,7 +6,7 @@ public class Appointment {
     private String confirmedBuyer;
     private String time;
 
-    public Appointment(Seller seller, ArrayList<String> buyerRequests, Buyer confirmedBuyers) {
+    public Appointment(Seller seller, ArrayList<String> buyerRequests, String confirmedBuyers) {
         this.seller = seller;
         this.buyerRequests = buyerRequests;
         this.confirmedBuyer = confirmedBuyers;
