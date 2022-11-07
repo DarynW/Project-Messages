@@ -7,6 +7,12 @@ import java.io.File;
 //import printwriter
 import java.io.PrintWriter;
 
+/**
+ * This class is used for database stuff.
+ * 
+ * @author Fischer Lab-13
+ * @version 1.0
+ */
 class Database {
     private String fileName;
 
