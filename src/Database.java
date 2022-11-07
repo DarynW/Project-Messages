@@ -87,7 +87,12 @@ class Database {
         }
     }
 
+    // TO DO
+    // Searching for documents with multiple parameters
+    // Searching for multiple documents
+
     public String get(String documentID, String key) throws Exception {
+
         ArrayList<String[][]> documents = readFile();
         for (String[][] document : documents) {
             // System.out.println(arrayToString(document));
@@ -180,6 +185,9 @@ class Database {
     }
 
     public void create(String documentID) throws Exception {
+
+        // TODO random ID if nothing is presented based on time
+
         if (this.documentExists(documentID))
             throw new Exception("Document already exists");
 
@@ -227,16 +235,85 @@ class Database {
         return false;
     }
 
-    public String searchByField(String field, String value) throws Exception {
+    public String searchByField(String tags) throws Exception {
+
+        String[] tagArray = tags.split(", ");
+
+        // create arraylist
+        ArrayList<String> searchTags = new ArrayList<String>();
+
+        // loop through each tag
+        for (int i = 0; i < tagArray.length; i++) {
+            String tag = tagArray[i];
+            String[] tagParts = tag.split(": ");
+            searchTags.add(tagParts[0]);
+        }
+
         ArrayList<String[][]> documents = readFile();
         for (String[][] document : documents) {
             // iterate through each key value pair
             for (String[] fieldPair : document) {
-                if (fieldPair[0].equals(field) && fieldPair[1].equals(value)) {
+
+                // check if all tags match
+                boolean allTagsMatch = true;
+                for (String tag : searchTags) {
+                    if (!fieldPair[0].equals(tag)) {
+                        allTagsMatch = false;
+                    }
+                }
+
+                if (allTagsMatch) {
                     return document[0][1];
                 }
             }
         }
         return null;
+    }
+
+    /**
+     * Searches with multiple tag criteria and values and returns an array of unique
+     * document ID's
+     * 
+     * @param tags - String of tags and values to search for Example: "tag1: value1,
+     *             tag2: value2, tag3: value3, etc."
+     * @return String[] - Array of document ID's
+     * @throws Exception
+     */
+    public ArrayList<String> searchAllByField(String tags) throws Exception {
+
+        // create result string arraylist
+        ArrayList<String> result = new ArrayList<String>();
+
+        String[] tagArray = tags.split(", ");
+
+        // create arraylist
+        ArrayList<String> searchTags = new ArrayList<String>();
+
+        // loop through each tag
+        for (int i = 0; i < tagArray.length; i++) {
+            String tag = tagArray[i];
+            String[] tagParts = tag.split(": ");
+            searchTags.add(tagParts[0]);
+        }
+
+        ArrayList<String[][]> documents = readFile();
+        for (String[][] document : documents) {
+            // iterate through each key value pair
+            for (String[] fieldPair : document) {
+
+                // check if all tags match
+                boolean allTagsMatch = true;
+                for (String tag : searchTags) {
+                    if (!fieldPair[0].equals(tag)) {
+                        allTagsMatch = false;
+                    }
+                }
+
+                if (allTagsMatch) {
+                    result.add(document[0][1]);
+                }
+            }
+        }
+        return result;
     }
 }
