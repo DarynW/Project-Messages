@@ -1,3 +1,4 @@
+
 //import scanner and arraylist
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -5,6 +6,8 @@ import java.util.ArrayList;
 import java.io.File;
 //import printwriter
 import java.io.PrintWriter;
+// import uuid.uuid.UUID
+import java.util.UUID;
 
 /**
  * This class is used for database stuff.
@@ -91,10 +94,6 @@ public class Database {
             System.out.println("Error: " + e.getMessage());
         }
     }
-
-    // TO DO
-    // Searching for documents with multiple parameters
-    // Searching for multiple documents
 
     public String get(String documentID, String key) throws Exception {
 
@@ -189,7 +188,7 @@ public class Database {
         }
     }
 
-    public void create(String documentID) throws Exception {
+    public void createDocument(String documentID) throws Exception {
 
         // TODO random ID if nothing is presented based on time
 
@@ -202,6 +201,12 @@ public class Database {
         newDocument[0][1] = documentID;
         documents.add(newDocument);
         writeFile(documents);
+    }
+
+    public String createDocument() throws Exception {
+        String documentID = UUID.randomUUID().toString();
+        this.createDocument(documentID);
+        return documentID;
     }
 
     public void delete(String documentID) throws Exception {
