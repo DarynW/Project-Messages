@@ -189,9 +189,6 @@ public class Database {
     }
 
     public void createDocument(String documentID) throws Exception {
-
-        // TODO random ID if nothing is presented based on time
-
         if (this.documentExists(documentID))
             throw new Exception("Document already exists");
 
