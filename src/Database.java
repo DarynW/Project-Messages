@@ -13,7 +13,7 @@ import java.io.PrintWriter;
  * @author Fischer Lab-13
  * @version 1.0
  */
-class Database {
+public class Database {
     private String fileName;
 
     public Database(String fileName) {
