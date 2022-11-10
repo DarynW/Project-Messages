@@ -1,44 +1,83 @@
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 
-public class Calendar {
-    private int appointmentCount;
-    private ArrayList<Appointment> appointments;
+/**
+ * Calendar class that extends Store
+ * Contains the appointments that go with the specific calendar for one tutor
+ *
+ * @author Andy Niu
+ * @version 11/10/2022 databaseFocus branch
+ */
+public class Calendar extends Store {
+    private String tutorName;
+    private ArrayList<String> appointments;
 
-    public Calendar () {
-        
+    public Calendar(String databaseName, String sellerName, String storeName, String tutorName) throws Exception {
+        super(databaseName, sellerName, storeName);
+
+        ArrayList<String> temp =
+                super.getDatabase().searchAllByField("dataType: Appointment, sellerName: " + sellerName);
+        for (String each : temp) {
+            appointments.add(super.getDatabase().get(each, "tutorName"));
+        }
     }
 
-    public Calendar (Calendar[] calendars) {
-
+    public String getTutorName() {
+        return tutorName;
     }
 
-    public int getAppointmentCount() {
-        return appointmentCount;
+    public void setTutorName(String tutorName) {
+        this.tutorName = tutorName;
     }
 
-    public void setAppointmentCount(int appointmentCount) {
-        this.appointmentCount = appointmentCount;
+    public ArrayList<String> getAppointments() {
+        return appointments;
     }
 
-    public boolean addAppointment(Seller seller, String time) {
-        Appointment newAppointment = new Appointment(seller, null, null);
-        newAppointment.setTime(time);
-        appointments.add(newAppointment);
-        return true;
+    public void setAppointments(ArrayList<String> appointments) {
+        this.appointments = appointments;
     }
 
-    public boolean deleteAppointment(Appointment appointment) {
-        for (int i = 0; i < appointments.size(); i++) {
-            if (appointment == appointments.get(i)) {
-                appointments.remove(i);
-                return true;
+    /**
+     * Adds an appointment to this specific calendar for this tutor.
+     * This makes an appointment datatype with all the necessary tags.
+     * Also checks if there is already an appointment with the exact same info
+     * TODO Still needs to give error if duplicate appointment is found
+     *
+     * @param date the date of the appointment in m/d/y. Ex. 01/01/2022
+     * @param hour the hour of the appointment in 24 hour time. Ex. 15:00
+     */
+    public void addAppointments(String date, String hour) {
+        ArrayList<String> temp;
+        try {
+             temp = super.getDatabase().searchAllByField("dataType: Appointment, " +
+                     "sellerName: " + super.getSellerName() + ", " +
+                     "storeName: " + super.getStoreName() +
+                     ", tutorName: " + tutorName +
+                     ", buyerName: " + null +
+                     ", date: " + date +
+                     ", hour: " + hour);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        if (temp.isEmpty()) {
+            String documentID = "";
+            try {
+                documentID = super.getDatabase().createDocument();
+            } catch (Exception e) {
+                System.out.println("Document ID duplicate");
+            }
+            try {
+                super.getDatabase().add(documentID, "dataType", "Appointment");
+                super.getDatabase().add(documentID, "sellerName", super.getSellerName());
+                super.getDatabase().add(documentID, "storeName", super.getStoreName());
+                super.getDatabase().add(documentID, "tutorName", tutorName);
+                super.getDatabase().add(documentID, "buyerName", null);
+                super.getDatabase().add(documentID, "date", date);
+                super.getDatabase().add(documentID, "hour", hour);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
         }
-        return false;
-    }
-
-    public Appointment modifyAppointment(Appointment appointment) {
-        //modify time, confirmedBuyers, buyerRequests, or seller name
-        return appointment;
     }
 }

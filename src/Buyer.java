@@ -2,6 +2,7 @@ import java.util.*;
 /**
  *  Buyer class that contains a buyer
  *  with a list of appointments
+ *  TODO When calling buyer, first instantiate Database class
  *
  * @author Andy Niu, lab sec 13
  * @version 11/6/2022

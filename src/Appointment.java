@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+
 public class Appointment {
     private Seller seller;
     private ArrayList<String> buyerRequests;
@@ -44,3 +45,4 @@ public class Appointment {
         this.time = time;
     }
 }
+
