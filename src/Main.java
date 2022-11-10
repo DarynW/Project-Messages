@@ -15,10 +15,12 @@ public class Main {
             db.add("1", "sellerName", "Andy Niu");
         }
 
-         */
+
         for (int i = 1; i <= 10; i++) {
             db.createDocument("" + i);
             for (int i = 0; i )
         }
+
+         */
     }
 }
