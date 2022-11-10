@@ -1,5 +1,8 @@
 import javax.xml.crypto.Data;
+import java.security.spec.ECField;
 import java.util.ArrayList;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 
 /**
  * Calendar class that extends Store.
@@ -61,8 +64,11 @@ public class Calendar extends Store {
      * @param date the date of the appointment in m/d/y. Ex. 01/01/2022
      * @param hour the hour of the appointment in 24 hour time. Ex. 15:00
      */
-    public void addAppointments(String date, String hour) {
+    public void addAppointment(String date, String hour) {
         ArrayList<String> temp;
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        String modTime = dtf.format(now);
         try {
              temp = super.getDatabase().searchAllByField("dataType: Appointment, " +
                      "sellerName: " + super.getSellerName() + ", " +
@@ -89,9 +95,42 @@ public class Calendar extends Store {
                 super.getDatabase().add(documentID, "buyerName", null);
                 super.getDatabase().add(documentID, "date", date);
                 super.getDatabase().add(documentID, "hour", hour);
+                super.getDatabase().add(documentID, "modTime", modTime);
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+        }
+    }
+
+    public void editAppointment(String documentID, String tag, String value) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        String modTime = dtf.format(now);
+        try {
+            if (super.getDatabase().fieldExists(documentID, "Appointment")) {
+                try {
+                    super.getDatabase().write(documentID, tag, value);
+                    super.getDatabase().write(documentID, "modTime", modTime);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Appointment does not exist");
+        }
+    }
+
+    public void deleteAppointment(String documentID) {
+        try {
+            if (super.getDatabase().fieldExists(documentID, "Appointment")) {
+                try {
+                    super.getDatabase().delete(documentID);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Appointment does not exist");
         }
     }
 }

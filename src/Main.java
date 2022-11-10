@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Main {
@@ -22,5 +24,9 @@ public class Main {
         }
 
          */
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        String modTime = dtf.format(now);
+        System.out.println(modTime);
     }
 }

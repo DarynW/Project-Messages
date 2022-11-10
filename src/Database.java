@@ -300,6 +300,7 @@ public class Database {
      *             buyerName ([String buyerName]) *Used for Appointment dataType.</p>
      *             date ([String m/d/y. Ex. 01/01/2022]) *Used for Appointment dataType</p>
      *             hour ([String hr:min. Ex. 14:44. USE 24 HOUR TIME]) *Used for Appointment dataType
+     *             modTime ([String m/d/y hr:min:sec]) *Used for Appointment dataType
      *</p>
      *             REQUEST DATA TYPE TAGS:</p>
      *             appointmentID ([String documentID]) *Used for Request dataType</p>
