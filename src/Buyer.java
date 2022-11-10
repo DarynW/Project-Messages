@@ -9,31 +9,43 @@ import java.util.*;
 public class Buyer {
     private String name;
     private ArrayList<Appointment> ConfirmedAppointments;
-    private ArrayList<Appointment> bRAppointments;
+    private ArrayList<Appointment> requestedAppointments;
 
     /**
      * Instantiates buyer name with param name. ConfirmedAppointments set to empty
      * RequestedAppointments set to empty.
      *
-     * @param name  the string to display.  If the text is null,
-     *              the tool tip is turned off for this component.
+     * @param name  name of buyer
      */
     public Buyer(String name) {
         this.name = name;
         ConfirmedAppointments = new ArrayList<Appointment>();
-        bRAppointments = new ArrayList<Appointment>();
+        requestedAppointments = new ArrayList<Appointment>();
     }
 
+    /**
+     * Instantiates a Buyer object
+     *
+     * @param name name of buyer
+     * @param bCA Confirmed Appointments
+     * @param bRA Requested Appointments
+     */
     public Buyer(String name, ArrayList<Appointment> bCA, ArrayList<Appointment> bRA) {
         this.name = name;
         ConfirmedAppointments = bCA;
-        bRAppointments = bRA;
+        requestedAppointments = bRA;
     }
 
+    /**
+     * Instantiates a Buyer object
+     *
+     * @param name name of Buyer
+     * @param bCA Confirmed Appointments
+     */
     public Buyer(String name, ArrayList<Appointment> bCA) {
         this.name = name;
         ConfirmedAppointments = bCA;
-        bRAppointments = new ArrayList<Appointment>();
+        requestedAppointments = new ArrayList<Appointment>();
     }
 
     /**
@@ -63,11 +75,11 @@ public class Buyer {
         this.ConfirmedAppointments = ConfirmedAppointments;
     }
 
-    public ArrayList<Appointment> getbRAppointments() {
-        return bRAppointments;
+    public ArrayList<Appointment> getRequestedAppointments() {
+        return requestedAppointments;
     }
 
-    public void setbRAppointments(ArrayList<Appointment> bRAppointments) {
-        this.bRAppointments = bRAppointments;
+    public void setRequestedAppointments(ArrayList<Appointment> requestedAppointments) {
+        this.requestedAppointments = requestedAppointments;
     }
 }
