@@ -3,31 +3,31 @@ import java.util.ArrayList;
 
 /**
  * Seller class. Used by the seller User.
- * Create Stores that contain calendars that then contain appointments
+ * Create Stores that contain calendars that then contain appointments.
  *
  * @author Andy Niu
  * @version 11/10/2022 databaseFocus branch
  */
 public class Seller {
     /**
-     * Name of the database
+     * Name of the database.
      */
     private String databaseName;
     /**
-     * The database object created using the databaseName
+     * The database object created using the databaseName.
      */
     private Database database;
     /**
-     * The name of the seller account
+     * The name of the seller account.
      */
     private String sellerName;
     /**
-     * An ArrayList of the stores that the seller controls
+     * An ArrayList of the stores that the seller controls.
      */
     private ArrayList<String> stores;
 
     /**
-     * Instantiates a seller with the database and the name of the seller (username?)
+     * Instantiates a seller with the database and the name of the seller (username?).
      *
      * @param databaseName The name of the database
      * @param sellerName The name of the seller account
@@ -47,7 +47,7 @@ public class Seller {
     }
 
     /**
-     * Creates a new store under the seller
+     * Creates a new store under the seller.
      *
      * @param storeName Name of the new store
      */

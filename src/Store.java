@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 /**
  * Store class that stores calendars for a store.
- * Created by the Seller class
+ * Created by the Seller class.
  *
  * @author Andy Niu
  * @version 11/10/2022 databaseFocus branch
@@ -13,12 +13,12 @@ public class Store extends Seller {
      */
     private String storeName;
     /**
-     * A list of calendars in the store
+     * A list of calendars in the store.
      */
     private ArrayList<String> calendars;
 
     /**
-     * Instantiates the Store object
+     * Instantiates the Store object.
      *
      * @param databaseName name of database
      * @param sellerName name of the seller

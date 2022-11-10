@@ -1,8 +1,8 @@
 import java.util.*;
 /**
- *  Buyer class that contains a buyer
- *  with a list of appointments
- *  TODO When calling buyer, first instantiate Database class
+ *  Buyer class that contains a buyer.
+ *  with a list of appointments.
+ *  TODO When calling buyer, first instantiate Database class.
  *
  * @author Andy Niu, lab sec 13
  * @version 11/6/2022
@@ -13,7 +13,7 @@ public class Buyer {
     private ArrayList<Appointment> requestedAppointments;
 
     /**
-     * Instantiates buyer name with param name. ConfirmedAppointments set to empty
+     * Instantiates buyer name with param name. ConfirmedAppointments set to empty.
      * RequestedAppointments set to empty.
      *
      * @param name  name of buyer
@@ -25,7 +25,7 @@ public class Buyer {
     }
 
     /**
-     * Instantiates a Buyer object
+     * Instantiates a Buyer object.
      *
      * @param name name of buyer
      * @param bCA Confirmed Appointments
@@ -38,7 +38,7 @@ public class Buyer {
     }
 
     /**
-     * Instantiates a Buyer object
+     * Instantiates a Buyer object.
      *
      * @param name name of Buyer
      * @param bCA Confirmed Appointments
@@ -50,7 +50,7 @@ public class Buyer {
     }
 
     /**
-     * gets the buyer's name
+     * gets the buyer's name.
      *
      * @return returns name variable
      */
@@ -59,7 +59,7 @@ public class Buyer {
     }
 
     /**
-     * sets the name using a string param
+     * sets the name using a string param.
      *
      * @param name The string that you want the
      *             name to change to.
