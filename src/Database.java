@@ -289,11 +289,13 @@ public class Database {
      *             dataType (User, Appointment, Request)
      *</p>
      *             USER DATA TYPE TAGS:</p>
+     *             dataType (User) *User for User dataType</p>
      *             userName ([String name]) *Used for User dataType</p>
      *             password ([String password]) *Used for User dataType</p>
      *             userType ([String Seller or Buyer]) *Used for User dataType</p>
      *</p>
      *             APPOINTMENTS DATA TYPE TAGS:</p>
+     *             dataType (Appointment) *User for Appointment dataType</p>
      *             sellerName ([String sellerName]) *Used for Appointment dataType</p>
      *             storeName ([String storeName]) *Used for Appointment dataType</p>
      *             tutorName ([String tutorName]) *Used for Appointment dataType</p>
@@ -303,6 +305,7 @@ public class Database {
      *             modTime ([String m/d/y hr:min:sec]) *Used for Appointment dataType
      *</p>
      *             REQUEST DATA TYPE TAGS:</p>
+     *             dataType (Request) *User for Request dataType</p>
      *             appointmentID ([String documentID]) *Used for Request dataType</p>
      *             requestName ([String name of buyer]) *Used for Request dataType</p>
      *
