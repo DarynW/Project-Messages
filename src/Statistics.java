@@ -47,8 +47,31 @@ public class Statistics {
         ArrayList<String> temp = new ArrayList<String>();
         ArrayList<String> buyer = new ArrayList<String>();
         ArrayList<Integer> count = new ArrayList<Integer>();
+        try {
+            temp = database.searchAllByField("dataType: Appointment, " +
+                    "sellerName: " + userName);
+        } catch(Exception e) {
+            throw new RuntimeException(e);
+        }
 
-        temp =
+        for (int i = 0; i < temp.size(); ++) {
+            boolean buyerNameDuplicate = false;
+            for (int j = 0; j < buyer.size(); j++) {
+                try {
+                    if (database.get(temp.get(i), "buyerName").equals(buyer.get(j))) {
+                        count.set(j, count.get(j) + 1);
+                        buyerNameDuplicate = true;
+                    }
+                } catch(Exception e) {
+                    buyerNameDuplicate = true;
+                    throw new RuntimeException(e);
+                }
+            }
+            if (!buyerNameDuplicate) {
+
+            }
+        }
+
 
 
 

@@ -294,6 +294,7 @@ public class Database {
      *             dataType (User) *User for User dataType</p>
      *             userName ([String name]) *Used for User dataType</p>
      *             password ([String password]) *Used for User dataType</p>
+     *             email ([String email]) *Used for User dataType</p>
      *             userType ([String Seller or Buyer]) *Used for User dataType</p>
      *</p>
      *             APPOINTMENTS DATA TYPE TAGS:</p>
