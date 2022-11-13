@@ -99,6 +99,8 @@ public class Calendar extends Store {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+        } else {
+            System.out.println("Appointment already exists!");
         }
     }
 

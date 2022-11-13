@@ -286,7 +286,9 @@ public class Database {
      *             Tags (Things in {} are the tag names. Things in () are what the exact values have to be.</p>
      *             Then in [] there can be different types of stuff, doesn't need to be the exact wording):</p>
      *</p>
-     *             dataType (User, Appointment, Request)
+     *             There are three types of data in this database: User, Appointment, Request. Then, these 3 types
+     *             of data each have their own tags. When you create a datatype, MAKE SURE THAT IT HAS ALL THE TAGS
+     *             FOR THAT DATATYPE!
      *</p>
      *             USER DATA TYPE TAGS:</p>
      *             dataType (User) *User for User dataType</p>
