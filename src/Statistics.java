@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  * Does the statistical calculations for both
@@ -75,13 +76,31 @@ public class Statistics {
                 }
             }
         }
-
+        ArrayList<LabeledData> data = new ArrayList<>();
         for (int i = 0; i < buyer.size(); i++) {
-            text.add(buyer.get(i) + ": " + count.get(i));
+            data.add(new LabeledData(buyer.get(i), count.get(i)));
         }
 
         if (descending) {
-            for (int i =)
+            data.sort(Comparator.comparing(LabeledData::getData));
+            for (LabeledData each : data) {
+                text.add(each.getLabel() + ": " + each.getData());
+            }
+        } else {
+            data.sort(Comparator.comparing(LabeledData::getData).reversed());
+            for (LabeledData each : data) {
+                text.add(each.getLabel() + ": " + each.getData());
+            }
         }
+        return text;
     }
+
+    public ArrayList<String> getPopularAppointmentsByStore(boolean descending) {
+
+    }
+
+    public ArrayList<String> getCustomersPerStore(boolean descending) {
+
+    }
+
 }
