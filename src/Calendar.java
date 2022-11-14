@@ -23,11 +23,11 @@ public class Calendar extends Store {
      * Finds all appointments that are under sellerName. TODO add more tag searches for this?
      * Then sorts out all that are for the specific tutor.
      *
-     * @param databaseName
-     * @param sellerName
-     * @param storeName
+     * @param databaseName String name of database
+     * @param sellerName String name of seller. Use the name from the User data type
+     * @param storeName String name of the store that the appointment is in
      * @param tutorName the tutor's name. NOT THE SAME AS THE SELLER.
-     * @throws Exception
+     * @throws Exception can't find documentIDs for calendars
      */
     public Calendar(String databaseName, String sellerName, String storeName, String tutorName) throws Exception {
         super(databaseName, sellerName, storeName);
@@ -59,7 +59,6 @@ public class Calendar extends Store {
      * Adds an appointment to this specific calendar for this tutor.
      * This makes an appointment datatype with all the necessary tags.
      * Also checks if there is already an appointment with the exact same info.
-     * TODO Still needs to give error if duplicate appointment is found.
      *
      * @param date the date of the appointment in m/d/y. Ex. 01/01/2022
      * @param hour the hour of the appointment in 24 hour time. Ex. 15:00
@@ -104,6 +103,15 @@ public class Calendar extends Store {
         }
     }
 
+    /**
+     * Can edit the appointment's tags and corresponding value.
+     * Check the Database Class for the documentation on tags
+     *
+     * @param documentID String documentID of the appointment you
+     *                   want to edit
+     * @param tag String tag that you want to edit
+     * @param value String value of the tag you want to edit
+     */
     public void editAppointment(String documentID, String tag, String value) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
@@ -122,6 +130,13 @@ public class Calendar extends Store {
         }
     }
 
+    /**
+     * Deletes the appointment using the appointment's
+     * documentID
+     *
+     * @param documentID String documentID of the appointment
+     *                   you want to delete
+     */
     public void deleteAppointment(String documentID) {
         try {
             if (super.getDatabase().fieldExists(documentID, "Appointment")) {
