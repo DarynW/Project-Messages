@@ -1,7 +1,8 @@
 import java.util.*;
+
 /**
- *  Buyer class that contains a buyer.
- *  with a list of appointments.
+ * Buyer class that contains a buyer.
+ * with a list of appointments.
  *
  * @author Daryn Wang, lab sec 13
  * @version 11/13/2022
@@ -18,8 +19,8 @@ public class Buyer {
      * Instantiates a Buyer object.
      *
      * @param name name of buyer
-     * @param bCA Confirmed Appointments
-     * @param bRA Requested Appointments
+     * @param bCA  Confirmed Appointments
+     * @param bRA  Requested Appointments
      */
     public Buyer(String databaseName, String name, ArrayList<String> bCA, ArrayList<String> bRA) throws Exception {
         this.databaseName = databaseName;
@@ -43,7 +44,7 @@ public class Buyer {
      * Instantiates buyer name with param name. ConfirmedAppointments set to empty.
      * RequestedAppointments set to empty.
      *
-     * @param name  name of buyer
+     * @param name name of buyer
      */
     public Buyer(String databaseName, String name) throws Exception {
         this(databaseName, name, new ArrayList<String>(), new ArrayList<String>());
@@ -51,12 +52,11 @@ public class Buyer {
     }
 
 
-
     /**
      * Instantiates a Buyer object.
      *
      * @param name name of Buyer
-     * @param bCA Confirmed Appointments
+     * @param bCA  Confirmed Appointments
      */
     public Buyer(String databaseName, String name, ArrayList<String> bCA) throws Exception {
         this(databaseName, name, bCA, new ArrayList<String>());
@@ -98,6 +98,13 @@ public class Buyer {
         this.requestedAppointments = requestedAppointments;
     }
 
+    /**
+     * Creates a request datatype in the database using
+     * the AppointmentID and the name of the buyer
+     *
+     * @param appointmentID String appointmentID
+     * @param name String name of the buyer
+     */
     public void addRequest(String appointmentID, String name) {
         ArrayList<String> temp;
 
@@ -125,6 +132,10 @@ public class Buyer {
         }
     }
 
+    /**
+     * Deletes a request data type when inputted with
+     * the DocumentID of the request
+     */
     public void deleteRequest(String appointmentID) {
         try {
             if (database.fieldExists(appointmentID, "Request")) {
