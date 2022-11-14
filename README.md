@@ -11,7 +11,7 @@ Group CS180 Project
       b. Fischer Osterle: submitted the entire project on Brightspace
       
 3. Description of classes
-      a. Database
+      a. Database</p>
             1. Handles the offline storage of data for the entire program. All other classes call this class for data.
       b. RealStart
             1. Starts the Program. Calls the Start class
