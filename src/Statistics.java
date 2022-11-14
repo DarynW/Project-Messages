@@ -50,11 +50,11 @@ public class Statistics {
         try {
             temp = database.searchAllByField("dataType: Appointment, " +
                     "sellerName: " + userName);
-        } catch(Exception e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
-        for (int i = 0; i < temp.size(); ++) {
+        for (int i = 0; i < temp.size(); i++) {
             boolean buyerNameDuplicate = false;
             for (int j = 0; j < buyer.size(); j++) {
                 try {
@@ -62,18 +62,26 @@ public class Statistics {
                         count.set(j, count.get(j) + 1);
                         buyerNameDuplicate = true;
                     }
-                } catch(Exception e) {
+                } catch (Exception e) {
                     buyerNameDuplicate = true;
                     throw new RuntimeException(e);
                 }
             }
             if (!buyerNameDuplicate) {
-
+                try {
+                    buyer.add(database.get(temp.get(i), "buyerName"));
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
 
+        for (int i = 0; i < buyer.size(); i++) {
+            text.add(buyer.get(i) + ": " + count.get(i));
+        }
 
-
-
+        if (descending) {
+            for (int i =)
+        }
     }
 }
