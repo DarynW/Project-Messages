@@ -94,6 +94,12 @@ public class Seller {
         this.stores = stores;
     }
 
+    /**
+     * used to edit a store's name
+     *
+     * @param storeName the store you want to edit
+     * @param newStoreName the new store name
+     */
     public void editStoreName(String storeName, String newStoreName) {
         ArrayList<String> storeIDs = new ArrayList<>();
         //Edits the stores arraylist which contains the names of the stores.
@@ -120,6 +126,14 @@ public class Seller {
         }
     }
 
+    /**
+     * deletes a store that has the storeName
+     * that is inputted. Deletes all appointments
+     * that have the storeName
+     *
+     * @param storeName name of store that will be
+     *                  deleted
+     */
     public void deleteStore(String storeName) {
         ArrayList<String> storeIDs = new ArrayList<>();
 
