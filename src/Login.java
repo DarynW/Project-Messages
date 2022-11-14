@@ -37,6 +37,11 @@ public class Login extends Database {
         }
         if (temp.isEmpty()) {
             documentID = "";
+            try {
+                documentID = database.createDocument();
+            } catch (Exception e) {
+                System.out.println("Document ID duplicate");
+            }
         } else {
             documentID = temp.get(0);
         }
