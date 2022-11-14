@@ -22,15 +22,15 @@ public class Database {
         this.fileName = fileName;
     }
 
-    public static String arrayListToString(ArrayList<String> arrayList) {
+    public String arrayListToString(ArrayList<String> arrayList) {
         String string = "";
         for (int i = 0; i < arrayList.size(); i++) {
             string += arrayList.get(i) + "{$#}";
         }
-        return string;
+        return "{$#}" + string + "{$#}";
     }
 
-    public static ArrayList<String> stringToArrayList(String string) {
+    public ArrayList<String> stringToArrayList(String string) {
         ArrayList<String> arrayList = new ArrayList<String>();
         String[] stringArray = string.split("\\{\\$\\#\\}");
         for (int i = 0; i < stringArray.length; i++) {
@@ -274,6 +274,7 @@ public class Database {
                 }
             }
         }
+
         return null;
     }
 
@@ -344,13 +345,13 @@ public class Database {
      */
     public ArrayList<String> searchAllByField(String tags) throws Exception {
 
-        // create result string arraylist
-        ArrayList<String> result = new ArrayList<String>();
-
         String[] tagArray = tags.split(", ");
 
         // create arraylist
         ArrayList<String> searchTags = new ArrayList<String>();
+
+        // print hellow worlds
+        System.out.println("Hello Worldsssss");
 
         // loop through each tag
         for (int i = 0; i < tagArray.length; i++) {
@@ -360,6 +361,7 @@ public class Database {
         }
 
         ArrayList<String[][]> documents = readFile();
+        ArrayList<String> documentIDs = new ArrayList<String>();
         for (String[][] document : documents) {
             // iterate through each key value pair
             for (String[] fieldPair : document) {
@@ -373,10 +375,64 @@ public class Database {
                 }
 
                 if (allTagsMatch) {
-                    result.add(document[0][1]);
+                    documentIDs.add(document[0][1]);
                 }
             }
         }
-        return result;
+
+        return documentIDs;
+
+        /*
+         * String[] tagArray = tags.split(", ");
+         * 
+         * // create arraylist
+         * ArrayList<String[]> searchTags = new ArrayList<String[]>();
+         * 
+         * // loop through each tag
+         * for (int i = 0; i < tagArray.length; i++) {
+         * String tag = tagArray[i];
+         * String[] tagParts = tag.split(": ");
+         * searchTags.add(tagParts);
+         * }
+         * 
+         * // print search tags
+         * for (String[] tag : searchTags) {
+         * System.out.println(tag[0] + ": " + tag[1]);
+         * }
+         * 
+         * ArrayList<String[][]> documents = readFile();
+         * ArrayList<String> documentIDs = new ArrayList<String>();
+         * for (String[][] document : documents) {
+         * // iterate through each key value pair
+         * boolean allTagsMatch = true;
+         * ArrayList<String> keys = new ArrayList<String>();
+         * 
+         * for (String[] fieldPair : document) {
+         * 
+         * // check if all tags match
+         * // loop through tag parts
+         * for (String[] tagParts : searchTags) {
+         * if (fieldPair[0].equals(tagParts[0])) {
+         * keys.add(fieldPair[0]);
+         * if (!fieldPair[1].equals(tagParts[1])) {
+         * allTagsMatch = false;
+         * }
+         * }
+         * }
+         * 
+         * }
+         * // loop through search tags
+         * for (String[] tagParts : searchTags) {
+         * if (!keys.contains(tagParts[0])) {
+         * allTagsMatch = false;
+         * }
+         * }
+         * if (allTagsMatch) {
+         * documentIDs.add(document[0][1]);
+         * }
+         * }
+         * 
+         * return documentIDs;
+         */
     }
 }
