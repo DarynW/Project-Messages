@@ -52,7 +52,6 @@ public class Store extends Seller {
     }
 
     public ArrayList<String> getCalendars() {
-        updateCalendars();
         return calendars;
     }
 
@@ -76,6 +75,53 @@ public class Store extends Seller {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void editCalendarName(String calendarName, String newCalendarName) {
+        ArrayList<String> calendarIDs = new ArrayList<>();
+        //Edits the calendar arraylist which contains the names of the stores.
+        //Replaces the old calendarName with the new calendarName
+        for (int i = 0; i < calendars.size(); i++) {
+            if (calendars.get(i).equals(calendarName)) {
+                calendars.set(i, newCalendarName);
+            }
+        }
+        //Find all appointmentsIDs with the old calendar name
+        try {
+            calendarIDs = super.getDatabase().searchAllByField("tutorName: " + calendarName);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        //Replace/Write over the old calendarName for those appointments
+        //with the new calendarName
+        for (String each : calendarIDs) {
+            try {
+                super.getDatabase().write(each, "tutorName", newCalendarName);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    public void deleteCalendar(String calendarName) {
+        ArrayList<String> calendarIDs = new ArrayList<>();
+
+        calendars.remove(storeName);
+
+        try {
+            calendarIDs = super.getDatabase().searchAllByField("tutorName: " + calendarName);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        //Delete all appointments with the name of calendarName
+        for (String each : calendarIDs) {
+            try {
+                super.getDatabase().delete(each);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+
     }
 
 }

@@ -87,7 +87,6 @@ public class Seller {
     }
 
     public ArrayList<String> getStores() {
-        updateStores();
         return stores;
     }
 
