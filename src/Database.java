@@ -322,12 +322,12 @@ public class Database {
      *             </p>
      *             buyerName ([String buyerName]) *Used for Appointment dataType.
      *             </p>
-     *             date ([String m/d/y. Ex. 01/01/2022]) *Used for Appointment
+     *             date ([String y/m/d. Ex. 2022-01-01]) *Used for Appointment
      *             dataType
      *             </p>
      *             hour ([String hr:min. Ex. 14:44. USE 24 HOUR TIME]) *Used for
      *             Appointment dataType
-     *             modTime ([String m/d/y hr:min:sec]) *Used for Appointment
+     *             modTime ([String y/m/d hr:min:sec]) *Used for Appointment
      *             dataType
      *             </p>
      *             REQUEST DATA TYPE TAGS:

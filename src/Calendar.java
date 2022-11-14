@@ -66,7 +66,7 @@ public class Calendar extends Store {
      */
     public void addAppointment(String date, String hour) {
         ArrayList<String> temp;
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         String modTime = dtf.format(now);
         try {
