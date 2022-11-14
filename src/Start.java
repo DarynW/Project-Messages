@@ -98,11 +98,13 @@ public class Start {
 
             // display messages
             for (int i = 0; i < messages.size(); i++) {
-                System.out.println(database.get(messages.get(i), "message"));
+                System.out.println("Message: " + database.get(messages.get(i), "message") + ", ID: " + messages.get(i)
+                        + ", Author: " + database.get(database.get(messages.get(i), "author"), "email"));
             }
 
             // get message input
-            String message = getStringInput("Enter message or type \n1. Exit to Exit 2. Block to Block: ");
+            String message = getStringInput(
+                    "Enter message or type \nExit to Exit \nBlock to Block User\nEdit to Edit Message\nDelete to Delete Message");
 
             // if message is exit, exit the method
             if (message.toLowerCase().equals("exit")) {
@@ -121,7 +123,19 @@ public class Start {
                     blockedString += block + ",";
                 }
                 database.write(ourUserId, "blockedUsers", blockedString);
-            } else {
+            } else if (message.toLowerCase().equals("edit")) {
+                // take in message id and edit it in the database
+                String messageId = getStringInput("Enter message ID to edit");
+                String newMessage = getStringInput("Enter new message");
+                database.write(messageId, "message", newMessage);
+
+            } else if (message.toLowerCase().equals("delete")) {
+                // taker in message id and delete it from database
+                String messageId = getStringInput("Enter message ID to delete");
+                database.delete(messageId);
+            }
+
+            else {
                 // check if the user has blocked this user from messaging them
                 String[] blocked = database.get(otherUserId, "blockedUsers").split(",");
 
@@ -141,6 +155,8 @@ public class Start {
                 // if message is not exit, add the message to the database
                 String newMessageId = database.createDocument();
                 database.add(newMessageId, "message", message);
+                // author
+                database.add(newMessageId, "author", ourUserId);
                 database.add(newMessageId, userType, ourUserId);
                 database.add(newMessageId, otherUserType, otherUserId);
                 // add timestamps
@@ -168,12 +184,12 @@ public class Start {
             ArrayList<String> users = new ArrayList<String>();
 
             for (int i = 0; i < data.size(); i++) {
-                String[] split = data.get(i).split(",");
-                String[] split2 = split[0].split(":");
-                String[] split3 = split2[1].split(" ");
-                String user = split3[1];
-                if (!users.contains(user)) {
-                    users.add(user);
+                // get other user type id from data
+                String otherUserId = database.get(data.get(i), otherUserType);
+
+                // if the user is not already in the arraylist, add them
+                if (!users.contains(otherUserId)) {
+                    users.add(otherUserId);
                 }
             }
 
@@ -266,8 +282,8 @@ public class Start {
                                 ArrayList<String> stores = database.searchAllByField("type: store");
 
                                 // loop through stores and display them
-                                for (int i = 1; i < stores.size(); i++) {
-                                    System.out.println(i + ". " + database.get(stores.get(i), "name")
+                                for (int i = 0; i < stores.size(); i++) {
+                                    System.out.println((i + 1) + ". " + database.get(stores.get(i), "name")
                                             + " | Messages Sent: "
                                             + database
                                                     .searchAllByField("seller: " + database.get(stores.get(i), "owner"))
@@ -289,7 +305,7 @@ public class Start {
                                     }
 
                                     // if input is not 0, get the store id
-                                    String storeId = stores.get(storeInput);
+                                    String storeId = stores.get(storeInput - 1);
 
                                     // get owner id from store
                                     String ownerId = database.get(storeId, "owner");
@@ -317,7 +333,7 @@ public class Start {
                         // present menu where they can view their stores, create a store, view their
                         // messages or delete their account or exit the programs
                         int option = getIntInput(
-                                "1. View stores\n2. Create store\n3. View messages\n4. Delete account\n5. Exit");
+                                "1. View stores\n2. Create store\n3. View messages\n4. Delete account\n5. Search User To Message\n6. Exit");
 
                         // switch statement for the menu
                         switch (option) {
@@ -441,6 +457,20 @@ public class Start {
                                 database.delete(userId);
                                 break;
                             case 5:
+                                // prompt for seller email and start message with them
+                                String buyer = getStringInput("Enter buyer email");
+                                String buyerId = database.searchByField("email: " + buyer);
+                                if (buyerId == null) {
+                                    System.out.println("Buyer does not exist");
+                                    break;
+                                }
+
+                                // if the seller exists, display messages
+                                displayMessageInteraction(userId, buyerId, "buyer", "seller");
+
+                                break;
+                            case 6:
+
                                 // exit program
                                 System.exit(0);
                             default:

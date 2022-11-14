@@ -214,8 +214,15 @@ public class Database {
         for (String[][] document : documents) {
             // iterate through each key value pair
             if (document[0][1].equals(documentID)) {
-                documents.remove(document);
-                writeFile(documents);
+                // remove that document by adding all other documents to a new arraylist
+                ArrayList<String[][]> newDocuments = new ArrayList<String[][]>();
+                for (String[][] doc : documents) {
+                    if (doc != document) {
+                        newDocuments.add(doc);
+                    }
+                }
+
+                writeFile(newDocuments);
             }
         }
     }
@@ -350,9 +357,11 @@ public class Database {
         // create arraylist
         ArrayList<String[]> searchTags = new ArrayList<String[]>();
 
-        // print search tags
-        for (String[] tag : searchTags) {
-            System.out.println(tag[0] + ": " + tag[1]);
+        // loop through each tag
+        for (int i = 0; i < tagArray.length; i++) {
+            String tag = tagArray[i];
+            String[] tagParts = tag.split(": ");
+            searchTags.add(tagParts);
         }
 
         ArrayList<String[][]> documents = readFile();
@@ -384,17 +393,14 @@ public class Database {
             }
             // loop through search tags
             for (String[] tagParts : searchTags) {
+
                 if (!keys.contains(tagParts[0])) {
                     allTagsMatch = false;
                 }
             }
 
-            // print keys and tag matches
-            for (int i = 0; i < keys.size(); i++) {
-                System.out.println(keys.get(i) + ": " + tagMatches.get(i));
-            }
-
             if (allTagsMatch && !tagMatches.contains(false)) {
+                // print hello World
                 documentIDs.add(document[0][1]);
             }
         }
