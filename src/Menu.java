@@ -1,7 +1,9 @@
 import javax.swing.*;
 import javax.xml.crypto.Data;
+import java.awt.desktop.SystemEventListener;
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -13,8 +15,12 @@ import java.util.Scanner;
  */
 public class Menu extends Login {
     private Database database;
+    private String databaseName;
+    private String userName;
     public Menu(String databaseName, String userName, String password) {
         super(databaseName, userName, password);
+        this.databaseName = databaseName;
+        this.userName = userName;
         database = new Database(databaseName);
     }
 
@@ -75,5 +81,73 @@ public class Menu extends Login {
         } catch (Exception e) {
             System.out.println("Account does not exist");
         }
+    }
+
+    public void sellerMenu() {
+        Scanner scanner = new Scanner(System.in);
+        //arraylist to hold the stores that user owns
+        ArrayList<String> stores = new ArrayList<>();
+
+        //make seller object for user who is of Seller userType
+        Seller userSeller = new Seller(databaseName, userName);
+
+        //get the arraylist of stores that seller has
+        stores = userSeller.getStores();
+
+        //print out the stores that user owns
+        System.out.println("Stores");
+        for (int i = 0; i < stores.size(); i++) {
+            System.out.print(stores.get(i) + "\t");
+        }
+        System.out.println();
+
+        //give user options to do with stores
+        System.out.println("\n1. Create store" +
+                "\n2. Delete store" +
+                "\n3. Select store" +
+                "\n4. Calculate statistics" +
+                "\n5. Review requests");
+        int userChoice = scanner.nextInt();
+
+        //give user different options based on what they press
+        switch (userChoice) {
+            case 1:
+                stores.add(createStore(userSeller).getStoreName());
+                userSeller.setStores(stores);
+                break;
+            case 2:
+                //print out all the stores
+                for (int i = 0; i < stores.size(); i++) {
+                    System.out.println((i + 1) + ". " + stores.get(i));
+                }
+                //get the number of the store user wants to delete and remove from stores arraylist
+                int deletedStore = scanner.nextInt();
+                stores.remove(deletedStore);
+                userSeller.setStores(stores);
+                break;
+            case 3:
+                selectStore(stores);
+        }
+    }
+
+    public Store createStore(Seller userSeller) {
+        Scanner scanner = new Scanner(System.in);
+        //get new name of store
+        System.out.println("Enter the name of the new store");
+        String newStoreName = scanner.nextLine();
+        //create new store and add to stores arraylist
+        Store newStore = new Store(databaseName, userName, newStoreName);
+        return newStore;
+    }
+
+    public void selectStore(ArrayList<String> stores) {
+        Scanner scanner = new Scanner(System.in);
+        //print out all the stores
+        for (int i = 0; i < stores.size(); i++) {
+            System.out.println((i + 1) + ". " + stores.get(i));
+        }
+        int chosenStore = scanner.nextInt();
+
+        System.out.println();
     }
 }
