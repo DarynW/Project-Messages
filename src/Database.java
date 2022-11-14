@@ -112,6 +112,15 @@ public class Database {
         return null;
     }
 
+    /**
+     * changes the values of a certain tag using the documentID, tag name,
+     * and new tag value
+     *
+     * @param documentID the document
+     * @param key the tag name
+     * @param value the new value of the tag
+     * @throws Exception can't find document/key
+     */
     public void write(String documentID, String key, String value) throws Exception {
         if (!this.documentExists(documentID)) {
             throw new Exception("Document does not exist");
@@ -135,6 +144,14 @@ public class Database {
         }
     }
 
+    /**
+     * Adds tags to a specific documentID
+     *
+     * @param documentID ID of document
+     * @param key tag name
+     * @param value tag value
+     * @throws Exception document does not exist/key already exists
+     */
     public void add(String documentID, String key, String value) throws Exception {
         if (!this.documentExists(documentID)) {
             throw new Exception("Document does not exist");
