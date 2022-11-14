@@ -282,35 +282,62 @@ public class Database {
      * document ID's
      * 
      * @param tags - String of tags and values to search for Example: "tag1: value1,
-     *             tag2: value2, tag3: value3, etc."</p>
-     *             Tags (Things in {} are the tag names. Things in () are what the exact values have to be.</p>
-     *             Then in [] there can be different types of stuff, doesn't need to be the exact wording):</p>
-     *</p>
-     *             There are three types of data in this database: User, Appointment, Request. Then, these 3 types
-     *             of data each have their own tags. When you create a datatype, MAKE SURE THAT IT HAS ALL THE TAGS
+     *             tag2: value2, tag3: value3, etc."
+     *             </p>
+     *             Tags (Things in {} are the tag names. Things in () are what the
+     *             exact values have to be.
+     *             </p>
+     *             Then in [] there can be different types of stuff, doesn't need to
+     *             be the exact wording):
+     *             </p>
+     *             </p>
+     *             There are three types of data in this database: User,
+     *             Appointment, Request. Then, these 3 types
+     *             of data each have their own tags. When you create a datatype,
+     *             MAKE SURE THAT IT HAS ALL THE TAGS
      *             FOR THAT DATATYPE!
-     *</p>
-     *             USER DATA TYPE TAGS:</p>
-     *             dataType (User) *User for User dataType</p>
-     *             userName ([String name]) *Used for User dataType</p>
-     *             password ([String password]) *Used for User dataType</p>
-     *             email ([String email]) *Used for User dataType</p>
-     *             userType ([String Seller or Buyer]) *Used for User dataType</p>
-     *</p>
-     *             APPOINTMENTS DATA TYPE TAGS:</p>
-     *             dataType (Appointment) *User for Appointment dataType</p>
-     *             sellerName ([String sellerName]) *Used for Appointment dataType</p>
-     *             storeName ([String storeName]) *Used for Appointment dataType</p>
-     *             tutorName ([String tutorName]) *Used for Appointment dataType</p>
-     *             buyerName ([String buyerName]) *Used for Appointment dataType.</p>
-     *             date ([String m/d/y. Ex. 01/01/2022]) *Used for Appointment dataType</p>
-     *             hour ([String hr:min. Ex. 14:44. USE 24 HOUR TIME]) *Used for Appointment dataType
-     *             modTime ([String m/d/y hr:min:sec]) *Used for Appointment dataType
-     *</p>
-     *             REQUEST DATA TYPE TAGS:</p>
-     *             dataType (Request) *User for Request dataType</p>
-     *             appointmentID ([String documentID]) *Used for Request dataType</p>
-     *             requestName ([String name of buyer]) *Used for Request dataType</p>
+     *             </p>
+     *             USER DATA TYPE TAGS:
+     *             </p>
+     *             dataType (User) *User for User dataType
+     *             </p>
+     *             userName ([String name]) *Used for User dataType
+     *             </p>
+     *             password ([String password]) *Used for User dataType
+     *             </p>
+     *             email ([String email]) *Used for User dataType
+     *             </p>
+     *             userType ([String Seller or Buyer]) *Used for User dataType
+     *             </p>
+     *             </p>
+     *             APPOINTMENTS DATA TYPE TAGS:
+     *             </p>
+     *             dataType (Appointment) *User for Appointment dataType
+     *             </p>
+     *             sellerName ([String sellerName]) *Used for Appointment dataType
+     *             </p>
+     *             storeName ([String storeName]) *Used for Appointment dataType
+     *             </p>
+     *             tutorName ([String tutorName]) *Used for Appointment dataType
+     *             </p>
+     *             buyerName ([String buyerName]) *Used for Appointment dataType.
+     *             </p>
+     *             date ([String m/d/y. Ex. 01/01/2022]) *Used for Appointment
+     *             dataType
+     *             </p>
+     *             hour ([String hr:min. Ex. 14:44. USE 24 HOUR TIME]) *Used for
+     *             Appointment dataType
+     *             modTime ([String m/d/y hr:min:sec]) *Used for Appointment
+     *             dataType
+     *             </p>
+     *             REQUEST DATA TYPE TAGS:
+     *             </p>
+     *             dataType (Request) *User for Request dataType
+     *             </p>
+     *             appointmentID ([String documentID]) *Used for Request dataType
+     *             </p>
+     *             requestName ([String name of buyer]) *Used for Request dataType
+     *             </p>
      *
      * @return ArrayList/<Strings> - Array of document ID's
      * @throws Exception
