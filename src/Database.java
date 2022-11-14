@@ -348,91 +348,58 @@ public class Database {
         String[] tagArray = tags.split(", ");
 
         // create arraylist
-        ArrayList<String> searchTags = new ArrayList<String>();
+        ArrayList<String[]> searchTags = new ArrayList<String[]>();
 
-        // print hellow worlds
-        System.out.println("Hello Worldsssss");
-
-        // loop through each tag
-        for (int i = 0; i < tagArray.length; i++) {
-            String tag = tagArray[i];
-            String[] tagParts = tag.split(": ");
-            searchTags.add(tagParts[0]);
+        // print search tags
+        for (String[] tag : searchTags) {
+            System.out.println(tag[0] + ": " + tag[1]);
         }
 
         ArrayList<String[][]> documents = readFile();
         ArrayList<String> documentIDs = new ArrayList<String>();
         for (String[][] document : documents) {
             // iterate through each key value pair
+            boolean allTagsMatch = true;
+            ArrayList<String> keys = new ArrayList<String>();
+            // create boolean arraylist
+            ArrayList<Boolean> tagMatches = new ArrayList<Boolean>();
+
             for (String[] fieldPair : document) {
 
                 // check if all tags match
-                boolean allTagsMatch = true;
-                for (String tag : searchTags) {
-                    if (!fieldPair[0].equals(tag)) {
-                        allTagsMatch = false;
+                // loop through tag parts
+                for (String[] tagParts : searchTags) {
+                    if (fieldPair[0].equals(tagParts[0])) {
+
+                        keys.add(fieldPair[0]);
+
+                        if (fieldPair[1].equals(tagParts[1])) {
+                            tagMatches.add(true);
+                        } else {
+                            tagMatches.add(false);
+                        }
                     }
                 }
 
-                if (allTagsMatch) {
-                    documentIDs.add(document[0][1]);
+            }
+            // loop through search tags
+            for (String[] tagParts : searchTags) {
+                if (!keys.contains(tagParts[0])) {
+                    allTagsMatch = false;
                 }
+            }
+
+            // print keys and tag matches
+            for (int i = 0; i < keys.size(); i++) {
+                System.out.println(keys.get(i) + ": " + tagMatches.get(i));
+            }
+
+            if (allTagsMatch && !tagMatches.contains(false)) {
+                documentIDs.add(document[0][1]);
             }
         }
 
         return documentIDs;
 
-        /*
-         * String[] tagArray = tags.split(", ");
-         * 
-         * // create arraylist
-         * ArrayList<String[]> searchTags = new ArrayList<String[]>();
-         * 
-         * // loop through each tag
-         * for (int i = 0; i < tagArray.length; i++) {
-         * String tag = tagArray[i];
-         * String[] tagParts = tag.split(": ");
-         * searchTags.add(tagParts);
-         * }
-         * 
-         * // print search tags
-         * for (String[] tag : searchTags) {
-         * System.out.println(tag[0] + ": " + tag[1]);
-         * }
-         * 
-         * ArrayList<String[][]> documents = readFile();
-         * ArrayList<String> documentIDs = new ArrayList<String>();
-         * for (String[][] document : documents) {
-         * // iterate through each key value pair
-         * boolean allTagsMatch = true;
-         * ArrayList<String> keys = new ArrayList<String>();
-         * 
-         * for (String[] fieldPair : document) {
-         * 
-         * // check if all tags match
-         * // loop through tag parts
-         * for (String[] tagParts : searchTags) {
-         * if (fieldPair[0].equals(tagParts[0])) {
-         * keys.add(fieldPair[0]);
-         * if (!fieldPair[1].equals(tagParts[1])) {
-         * allTagsMatch = false;
-         * }
-         * }
-         * }
-         * 
-         * }
-         * // loop through search tags
-         * for (String[] tagParts : searchTags) {
-         * if (!keys.contains(tagParts[0])) {
-         * allTagsMatch = false;
-         * }
-         * }
-         * if (allTagsMatch) {
-         * documentIDs.add(document[0][1]);
-         * }
-         * }
-         * 
-         * return documentIDs;
-         */
     }
 }
