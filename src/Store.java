@@ -77,6 +77,12 @@ public class Store extends Seller {
         }
     }
 
+    /**
+     * edits a Calendar's name
+     *
+     * @param calendarName name of calendar you want to edit
+     * @param newCalendarName new calendar name
+     */
     public void editCalendarName(String calendarName, String newCalendarName) {
         ArrayList<String> calendarIDs = new ArrayList<>();
         //Edits the calendar arraylist which contains the names of the stores.
@@ -103,6 +109,14 @@ public class Store extends Seller {
         }
     }
 
+    /**
+     * Uses a calendarName to delete all appointments
+     * that have that calendar name, thereby
+     * deleting that calendar
+     *
+     * @param calendarName name of calendar you want
+     *                     to delete
+     */
     public void deleteCalendar(String calendarName) {
         ArrayList<String> calendarIDs = new ArrayList<>();
 

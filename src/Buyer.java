@@ -135,6 +135,9 @@ public class Buyer {
     /**
      * Deletes a request data type when inputted with
      * the DocumentID of the request
+     *
+     * @param appointmentID the documentID of the request
+     *                      you want deleted
      */
     public void deleteRequest(String appointmentID) {
         try {
