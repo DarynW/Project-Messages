@@ -38,9 +38,16 @@ public class Seller {
         database = new Database(databaseName);
         try {
             ArrayList<String> temp = database.searchAllByField("dataType: Appointment, sellerName: " + sellerName);
+            ArrayList<String> storesTemp = new ArrayList<>();
             for (String each : temp) {
-                stores.add(database.get(each, "storeName"));
+                storesTemp.add(database.get(each, "storeName"));
             }
+            for (String each : storesTemp) {
+                if (!stores.contains(each)) {
+                    stores.add(each);
+                }
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -80,10 +87,79 @@ public class Seller {
     }
 
     public ArrayList<String> getStores() {
+        updateStores();
         return stores;
     }
 
     public void setStores(ArrayList<String> stores) {
         this.stores = stores;
     }
+
+    public void editStoreName(String storeName, String newStoreName) {
+        ArrayList<String> storeIDs = new ArrayList<>();
+        //Edits the stores arraylist which contains the names of the stores.
+        //Replaces the old storeName with the new storeName
+        for (int i = 0; i < stores.size(); i++) {
+            if (stores.get(i).equals(storeName)) {
+                stores.set(i, newStoreName);
+            }
+        }
+        //Find all appointmentsIDs with the old store name
+        try {
+            storeIDs = database.searchAllByField("storeName: " + storeName);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        //Replace/Write over the old storeName for those appointments
+        //with the new storeName
+        for (String each : storeIDs) {
+            try {
+                database.write(each, "storeName", newStoreName);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    public void deleteStore(String storeName) {
+        ArrayList<String> storeIDs = new ArrayList<>();
+
+        stores.remove(storeName);
+
+        try {
+            storeIDs = database.searchAllByField("storeName: " + storeName);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        //Replace/Write over the old storeName for those appointments
+        //with the new storeName
+        for (String each : storeIDs) {
+            try {
+                database.delete(each);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+    }
+
+    public void updateStores() {
+        stores.clear();
+        try {
+            ArrayList<String> temp = database.searchAllByField("dataType: Appointment, sellerName: " + sellerName);
+            ArrayList<String> storesTemp = new ArrayList<>();
+            for (String each : temp) {
+                storesTemp.add(database.get(each, "storeName"));
+            }
+            for (String each : storesTemp) {
+                if (!stores.contains(each)) {
+                    stores.add(each);
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

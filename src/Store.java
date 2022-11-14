@@ -29,8 +29,14 @@ public class Store extends Seller {
         this.storeName = storeName;
         try {
             ArrayList<String> temp = super.getDatabase().searchAllByField("storeName: " + storeName);
+            ArrayList<String> calendarsTemp = new ArrayList<>();
             for (String each : temp) {
-                calendars.add(super.getDatabase().get(each, "tutorName"));
+                calendarsTemp.add(super.getDatabase().get(each, "tutorName"));
+            }
+            for (String each : calendarsTemp) {
+                if (!calendars.contains(each)) {
+                    calendars.add(each);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -46,10 +52,31 @@ public class Store extends Seller {
     }
 
     public ArrayList<String> getCalendars() {
+        updateCalendars();
         return calendars;
     }
 
     public void setCalendars(ArrayList<String> calendars) {
         this.calendars = calendars;
     }
+
+    public void updateCalendars() {
+        calendars.clear();
+        try {
+            ArrayList<String> temp = super.getDatabase().searchAllByField("storeName: " + storeName);
+            ArrayList<String> calendarsTemp = new ArrayList<>();
+            for (String each : temp) {
+                calendarsTemp.add(super.getDatabase().get(each, "tutorName"));
+            }
+            for (String each : calendarsTemp) {
+                if (!calendars.contains(each)) {
+                    calendars.add(each);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
+
