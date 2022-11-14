@@ -9,9 +9,18 @@ public class LabeledData {
     private String label;
     private int data;
 
+    private String stringData;
+
     public LabeledData(String label, int data) {
         this.label = label;
         this.data = data;
+        this.stringData = null;
+    }
+
+    public LabeledData(String label, String stringData) {
+        this.label = label;
+        data = 0;
+        this.stringData = stringData;
     }
 
     public String getLabel() {
@@ -28,5 +37,13 @@ public class LabeledData {
 
     public void setData(int data) {
         this.data = data;
+    }
+
+    public String getStringData() {
+        return stringData;
+    }
+
+    public void setStringData(String stringData) {
+        this.stringData = stringData;
     }
 }

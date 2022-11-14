@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -109,7 +110,82 @@ public class Statistics {
     }
 
     public ArrayList<String> getPopularAppointmentsByStore(boolean descending) {
+        ArrayList<String> text = new ArrayList<>();
+        ArrayList<String> stores = new ArrayList<String>();
+        ArrayList<String> storesFinal = new ArrayList<String>();
+        ArrayList<String> temp;
+        ArrayList<LabeledData> data = new ArrayList<>();
 
+        try {
+            temp = database.searchAllByField("dataType: Appointment");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        for (String each : temp) {
+            try {
+                stores.add(database.get(each, "storeName"));
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        for (String each : stores) {
+            if (!storesFinal.contains(each)) {
+                storesFinal.add(each);
+            }
+        }
+
+        //Find the most popular appointment for each store
+        for (String storeName : storesFinal) {
+            ArrayList<String> dateAndTime = new ArrayList<String>();
+            ArrayList<String> dateAndTimeFinal = new ArrayList<>();
+            ArrayList<LabeledData> timeData = new ArrayList<>();
+            ArrayList<String> storeIDs;
+            //Find all the appointments that have the same storeName
+            try {
+                storeIDs = database.searchAllByField("dataType: Appointment, " +
+                        "storeName: " + storeName);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            //Get the date and time of these storeIDs appointments
+            for (String each : storeIDs) {
+                try {
+                    dateAndTime.add(database.get(each, "date") + " " + database.get(each, "hour"));
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            for (String each : dateAndTime) {
+                if (!dateAndTimeFinal.contains(each)) {
+                    dateAndTimeFinal.add(each);
+                }
+            }
+            for (String each : dateAndTimeFinal) {
+                int count = 0;
+                for (String element : dateAndTime) {
+                    if (each.equals(element)) {
+                        count++;
+                    }
+                }
+                timeData.add(new LabeledData(each, count));
+            }
+            timeData.sort(Comparator.comparing(LabeledData::getData));
+            data.add(new LabeledData(storeName, timeData.get(0).getLabel()));
+        }
+
+        if (descending) {
+            data.sort(Comparator.comparing(LabeledData::getData));
+            for (LabeledData each : data) {
+                text.add(each.getLabel() + " customers: " + each.getData());
+            }
+        } else {
+            data.sort(Comparator.comparing(LabeledData::getData).reversed());
+            for (LabeledData each : data) {
+                text.add(each.getLabel() + " customers: " + each.getData());
+            }
+        }
+        return text;
     }
 
     public ArrayList<String> getCustomersPerStore(boolean descending) {
@@ -121,8 +197,7 @@ public class Statistics {
         ArrayList<LabeledData> data = new ArrayList<>();
 
         try {
-            temp = database.searchAllByField("dataType: Appointment, " +
-                    "sellerName: " + userName);
+            temp = database.searchAllByField("dataType: Appointment");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -156,14 +231,14 @@ public class Statistics {
         //depending on the boolean value. Then convert the LabeledData into String Arraylists,
         //and return the arraylist
         if (descending) {
-            data.sort(Comparator.comparing(LabeledData::getData));
+            data.sort(Comparator.comparing(LabeledData::getStringData));
             for (LabeledData each : data) {
-                text.add(each.getLabel() + " customers: " + each.getData());
+                text.add(each.getLabel() + "'s popular appointment: " + each.getStringData());
             }
         } else {
-            data.sort(Comparator.comparing(LabeledData::getData).reversed());
+            data.sort(Comparator.comparing(LabeledData::getStringData).reversed());
             for (LabeledData each : data) {
-                text.add(each.getLabel() + " customers: " + each.getData());
+                text.add(each.getLabel() + "'s popular appointment: " + each.getStringData());
             }
         }
         return text;
