@@ -1,13 +1,10 @@
 
 //import scanner and arraylist
 import java.util.Scanner;
-import java.util.ArrayList;
 //import file
 import java.io.File;
 //import printwriter
 import java.io.PrintWriter;
-// import uuid.uuid.UUID
-import java.util.UUID;
 
 /**
  * This class is used for database stuff.

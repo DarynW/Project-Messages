@@ -2,7 +2,6 @@
 // imort required packages for network communication
 import java.io.*;
 import java.net.*;
-import java.util.*;
 
 public class Start {
 
@@ -14,6 +13,7 @@ public class Start {
 
         ServerSocket serverSocket = null;
         try {
+            // afaik we can ignore the memory leak warning
             serverSocket = new ServerSocket(4242);
         } catch (IOException e) {
             System.out.println("Server error: " + e.getMessage());
