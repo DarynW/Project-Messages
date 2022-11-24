@@ -1,13 +1,13 @@
 
-//import scanner and arraylist
-import java.util.Scanner;
+//import arraylist
 import java.util.ArrayList;
-//import file
-import java.io.File;
 //import printwriter
 import java.io.PrintWriter;
 // import uuid.uuid.UUID
 import java.util.UUID;
+// import required classes to create client socket connection
+import java.net.Socket;
+import java.io.*;
 
 /**
  * This class is used for database stuff.
@@ -16,10 +16,23 @@ import java.util.UUID;
  * @version 1.0
  */
 public class Database {
-    private String fileName;
+    private static int PORT = 5000;
+    private Socket socket;
+    private PrintWriter out;
+    private BufferedReader in;
 
-    public Database(String fileName) {
-        this.fileName = fileName;
+    public Database() {
+
+        // create a socket connection on localhost with port
+        try {
+            socket = new Socket("localhost", PORT);
+            System.out.println("Connected to server!");
+            out = new PrintWriter(socket.getOutputStream(), true);
+            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
     }
 
     public String arrayListToString(ArrayList<String> arrayList) {
@@ -40,23 +53,23 @@ public class Database {
     }
 
     private ArrayList<String[][]> readFile() throws Exception {
+        out.write("read" + "\n");
+        out.flush();
+
+        String string = in.readLine();
+
+        System.out.println(string);
+
         ArrayList<String> lines = new ArrayList<String>();
-        try {
-            File file = new File(fileName);
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                if (line != null)
-                    lines.add(line);
-            }
-            scanner.close();
-        } catch (Exception e) {
-            throw new Exception("Document couldnt be parsed");
+        for (String line : string.split("\\{\\$\\%\\^\\&\\}")) {
+            lines.add(line);
         }
 
         // new arraylist
         ArrayList<String[][]> parsedDocuments = new ArrayList<String[][]>();
 
+        if (string.equals("No data"))
+            return parsedDocuments;
         // go through each line and split them by {$@}
         for (String line : lines) {
             String[] parts = line.split("\\{\\$\\@\\}");
@@ -64,7 +77,11 @@ public class Database {
             // create an arraylist of arrays
             ArrayList<String[]> parsedDocument = new ArrayList<String[]>();
 
+            // HERE WE HAVE A SINGLE FIELD BEING PARSED, I BELIEVE IT IS A NULL OR NEWLINE
+            // CHARACTER
+
             for (int i = 0; i < parts.length; i += 2) {
+
                 String[] field = new String[2];
                 field[0] = parts[i];
                 field[1] = parts[i + 1];
@@ -81,15 +98,18 @@ public class Database {
     // writeFile - write the contents of an ArrayList<String[][]> to the db file
     private void writeFile(ArrayList<String[][]> documents) {
 
+        String result = "";
+
         try {
-            PrintWriter writer = new PrintWriter(fileName, "UTF-8");
             for (String[][] document : documents) {
                 for (String[] field : document) {
-                    writer.print(field[0] + "{$@}" + field[1] + "{$@}");
+                    result += field[0] + "{$@}" + field[1] + "{$@}";
                 }
-                writer.println();
+                result += "\n";
             }
-            writer.close();
+
+            out.write("write" + result.replace("\n", "\\{\\$\\%\\^\\&\\}") + "\n");
+            out.flush();
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }

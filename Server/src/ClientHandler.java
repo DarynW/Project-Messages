@@ -9,6 +9,7 @@ public class ClientHandler extends Thread {
     // consrtuctor that intakes a socket
     public ClientHandler(Socket socket, Database db) {
         this.socket = socket;
+        this.db = db;
     }
 
     public void run() {
@@ -24,24 +25,33 @@ public class ClientHandler extends Thread {
 
         while (true) {
 
+            // read until we get a message
             String message = null;
             try {
                 message = reader.readLine();
-            } catch (Exception e) {
+            } catch (IOException e) {
                 System.out.println("Error: " + e.getMessage());
             }
 
             String response = "";
 
+            // print message
+            System.out.println(message);
+
             if (message.startsWith("write")) {
                 // write to the database
                 String data = message.substring(5);
-                db.writeFile(data.replace("{$%^&}", "\n"));
-                response = "OK";
+                db.writeFile(data.replace("\\{\\$\\%\\^\\&\\}", "\n"));
             } else if (message.startsWith("read")) {
+                // remove read
+                message = message.replace("read", "");
                 // read from the database
                 try {
-                    response = db.readFile();
+                    response = db.readFile().replace("\n", "\\{\\$\\%\\^\\&\\}");
+
+                    if (response.equals("")) {
+                        response = "No data";
+                    }
                 } catch (Exception e) {
                     System.out.println("Error: " + e.getMessage());
                 }
@@ -52,9 +62,9 @@ public class ClientHandler extends Thread {
                 response = "Invalid command";
             }
 
-            writer.println(response.replace("\n", "{$%^&}"));
-
+            writer.println(response);
+            // outputa a new line
+            writer.flush();
         }
     }
-
 }

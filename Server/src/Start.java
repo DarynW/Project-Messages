@@ -14,7 +14,7 @@ public class Start {
         ServerSocket serverSocket = null;
         try {
             // afaik we can ignore the memory leak warning
-            serverSocket = new ServerSocket(4242);
+            serverSocket = new ServerSocket(PORT);
         } catch (IOException e) {
             System.out.println("Server error: " + e.getMessage());
         }
@@ -36,5 +36,4 @@ public class Start {
 
         }
     }
-
 }

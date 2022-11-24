@@ -222,7 +222,7 @@ public class Start {
     public void main() {
         try {
             // intatinatiate the database
-            database = new Database("../database.csv");
+            database = new Database();
 
             // give a menu to the user with login and register options
             if (getStringInput("1. Login\n2. Register").equals("1")) {
