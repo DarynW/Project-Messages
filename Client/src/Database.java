@@ -58,7 +58,7 @@ public class Database {
 
         String string = in.readLine();
 
-        System.out.println(string);
+        // TEST System.out.println("Message Received:" + string);
 
         ArrayList<String> lines = new ArrayList<String>();
         for (String line : string.split("\\{\\$\\%\\^\\&\\}")) {
@@ -70,17 +70,20 @@ public class Database {
 
         if (string.equals("No data"))
             return parsedDocuments;
+
         // go through each line and split them by {$@}
         for (String line : lines) {
+            if (line.equals(""))
+                continue;
             String[] parts = line.split("\\{\\$\\@\\}");
 
             // create an arraylist of arrays
             ArrayList<String[]> parsedDocument = new ArrayList<String[]>();
 
-            // HERE WE HAVE A SINGLE FIELD BEING PARSED, I BELIEVE IT IS A NULL OR NEWLINE
-            // CHARACTER
-
             for (int i = 0; i < parts.length; i += 2) {
+                // print the parts
+                // TEST System.out.println("Part 1:" + parts[i]);
+                // TEST System.out.println("Part 2:" + parts[i + 1]);
 
                 String[] field = new String[2];
                 field[0] = parts[i];
@@ -102,14 +105,21 @@ public class Database {
 
         try {
             for (String[][] document : documents) {
-                for (String[] field : document) {
-                    result += field[0] + "{$@}" + field[1] + "{$@}";
+                // do the above but dont add a {$@} at the end
+                for (int i = 0; i < document.length; i++) {
+                    String[] field = document[i];
+                    result += (i == 0 ? "" : "{$@}") + field[0] + "{$@}" + field[1];
                 }
+
                 result += "\n";
             }
 
-            out.write("write" + result.replace("\n", "\\{\\$\\%\\^\\&\\}") + "\n");
+            out.write("write" + result.replaceAll("\n", "\\{\\$\\%\\^\\&\\}") + "\n");
             out.flush();
+
+            // wait for an OK response
+            in.readLine();
+
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }

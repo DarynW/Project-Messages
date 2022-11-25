@@ -41,17 +41,20 @@ public class ClientHandler extends Thread {
             if (message.startsWith("write")) {
                 // write to the database
                 String data = message.substring(5);
-                db.writeFile(data.replace("\\{\\$\\%\\^\\&\\}", "\n"));
+                db.writeFile(data.replaceAll("\\{\\$\\%\\^\\&\\}", "\n"));
+
+                response = "OK";
             } else if (message.startsWith("read")) {
                 // remove read
                 message = message.replace("read", "");
                 // read from the database
                 try {
-                    response = db.readFile().replace("\n", "\\{\\$\\%\\^\\&\\}");
+                    response = db.readFile().replaceAll("\n", "\\{\\$\\%\\^\\&\\}");
 
                     if (response.equals("")) {
                         response = "No data";
                     }
+
                 } catch (Exception e) {
                     System.out.println("Error: " + e.getMessage());
                 }
@@ -63,6 +66,8 @@ public class ClientHandler extends Thread {
             }
 
             writer.println(response);
+            // print response
+            System.out.println(response);
             // outputa a new line
             writer.flush();
         }

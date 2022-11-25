@@ -24,8 +24,12 @@ public class Database {
         String fileContents = "";
         File file = new File(fileName);
         Scanner scanner = new Scanner(file);
+
+        int count = 0;
+
         while (scanner.hasNextLine()) {
-            fileContents += scanner.nextLine();
+            fileContents += (count == 0 ? "" : "\n") + scanner.nextLine();
+            count++;
         }
         scanner.close();
         return fileContents;
