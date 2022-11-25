@@ -1,5 +1,6 @@
 
 // scanner import
+
 import java.util.Scanner;
 //import arraylist
 import java.util.ArrayList;
@@ -133,9 +134,7 @@ public class Start {
                 // taker in message id and delete it from database
                 String messageId = getStringInput("Enter message ID to delete");
                 database.delete(messageId);
-            }
-
-            else {
+            } else {
                 // check if the user has blocked this user from messaging them
                 String[] blocked = database.get(otherUserId, "blockedUsers").split(",");
 
@@ -286,8 +285,8 @@ public class Start {
                                     System.out.println((i + 1) + ". " + database.get(stores.get(i), "name")
                                             + " | Messages Sent: "
                                             + database
-                                                    .searchAllByField("seller: " + database.get(stores.get(i), "owner"))
-                                                    .size());
+                                            .searchAllByField("seller: " + database.get(stores.get(i), "owner"))
+                                            .size());
                                 }
 
                                 // get input for store

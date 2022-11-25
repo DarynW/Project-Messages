@@ -1,5 +1,6 @@
 
 //import scanner and arraylist
+
 import java.util.Scanner;
 import java.util.ArrayList;
 //import file
@@ -11,7 +12,7 @@ import java.util.UUID;
 
 /**
  * This class is used for database stuff.
- * 
+ *
  * @author Fischer Lab-13
  * @version 1.0
  */
@@ -112,6 +113,15 @@ public class Database {
         return null;
     }
 
+    /**
+     * changes the values of a certain tag using the documentID, tag name,
+     * and new tag value
+     *
+     * @param documentID the document
+     * @param key        the tag name
+     * @param value      the new value of the tag
+     * @throws Exception can't find document/key
+     */
     public void write(String documentID, String key, String value) throws Exception {
         if (!this.documentExists(documentID)) {
             throw new Exception("Document does not exist");
@@ -135,6 +145,14 @@ public class Database {
         }
     }
 
+    /**
+     * Adds tags to a specific documentID
+     *
+     * @param documentID ID of document
+     * @param key        tag name
+     * @param value      tag value
+     * @throws Exception document does not exist/key already exists
+     */
     public void add(String documentID, String key, String value) throws Exception {
         if (!this.documentExists(documentID)) {
             throw new Exception("Document does not exist");
@@ -206,6 +224,13 @@ public class Database {
         return documentID;
     }
 
+    /**
+     * Deletes the document with the documentID
+     *
+     * @param documentID id of the data that will be
+     *                   deleted
+     * @throws Exception can't find file
+     */
     public void delete(String documentID) throws Exception {
         if (!this.documentExists(documentID))
             return;
@@ -288,7 +313,7 @@ public class Database {
     /**
      * Searches with multiple tag criteria and values and returns an array of unique
      * document ID's
-     * 
+     *
      * @param tags - String of tags and values to search for Example: "tag1: value1,
      *             tag2: value2, tag3: value3, etc."
      *             </p>
@@ -346,7 +371,6 @@ public class Database {
      *             </p>
      *             requestName ([String name of buyer]) *Used for Request dataType
      *             </p>
-     *
      * @return ArrayList/<Strings> - Array of document ID's
      * @throws Exception
      */
