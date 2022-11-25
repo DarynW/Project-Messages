@@ -1,36 +1,24 @@
 
-// scanner import
-import java.util.Scanner;
-
 //import arraylist
 import java.util.ArrayList;
 // hashmap
 import java.util.HashMap;
 
 public class Start {
+
+    Menu menu = new Menu();
+
     // method that gets int input form console and throws error if its not an
     // integer
     public int getIntInput(String prompt) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(prompt);
-        int input = 0;
-        try {
-            input = scanner.nextInt();
-        } catch (Exception e) {
-            System.out.println("Please enter a valid number");
-            System.exit(0);
-        }
-        return input;
+        return menu.getIntInput(prompt);
     }
 
     Database database;
 
     // method that gets string input form console
     public String getStringInput(String prompt) {
-        System.out.println(prompt);
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        return input;
+        return menu.getStringInput(prompt);
     }
 
     // method that finds and sorts the most common list of words from an arraylist
@@ -56,8 +44,14 @@ public class Start {
                 }
             }
         }
+
+        int maxInt = words.size();
+        if (maxInt > 10) {
+            maxInt = 10;
+        }
+
         ArrayList<String> mostCommonWords = new ArrayList<String>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < maxInt; i++) {
             int max = 0;
             int maxIndex = 0;
             for (int j = 0; j < wordCount.size(); j++) {
@@ -96,7 +90,7 @@ public class Start {
 
             // display messages
             for (int i = 0; i < messages.size(); i++) {
-                System.out.println("Message: " + database.get(messages.get(i), "message") + ", ID: " + messages.get(i)
+                menu.println("Message: " + database.get(messages.get(i), "message") + ", ID: " + messages.get(i)
                         + ", Author: " + database.get(database.get(messages.get(i), "author"), "email"));
             }
 
@@ -146,7 +140,7 @@ public class Start {
 
                 // if they have blocked them, inform the user and return
                 if (blockedList.contains(ourUserId)) {
-                    System.out.println("You have been blocked from messaging this user");
+                    menu.println("You have been blocked from messaging this user");
                     return;
                 }
 
@@ -217,6 +211,10 @@ public class Start {
     }
 
     public void main() {
+
+        // init menu
+        menu.go();
+
         try {
             // intatinatiate the database
             database = new Database();
@@ -232,13 +230,13 @@ public class Start {
 
                 // check if the user exists
                 if (userId == null) {
-                    System.out.println("User does not exist");
+                    menu.println("User does not exist");
                     return;
                 }
 
                 // check if password matches, if it doesnt, throw error and end program
                 if (!database.get(userId, "password").equals(password)) {
-                    System.out.println("Incorrect password");
+                    menu.println("Incorrect password");
                     return;
                 }
 
@@ -266,7 +264,7 @@ public class Start {
                                 String sellerEmail = getStringInput("Enter seller email");
                                 String sellerId = database.searchByField("email: " + sellerEmail);
                                 if (sellerId == null) {
-                                    System.out.println("Seller does not exist");
+                                    menu.println("Seller does not exist");
                                     break;
                                 }
 
@@ -281,7 +279,7 @@ public class Start {
 
                                 // loop through stores and display them
                                 for (int i = 0; i < stores.size(); i++) {
-                                    System.out.println((i + 1) + ". " + database.get(stores.get(i), "name")
+                                    menu.println((i + 1) + ". " + database.get(stores.get(i), "name")
                                             + " | Messages Sent: "
                                             + database
                                                     .searchAllByField("seller: " + database.get(stores.get(i), "owner"))
@@ -298,7 +296,7 @@ public class Start {
 
                                     // check if the number is within the range of the stores
                                     if (storeInput > stores.size() || storeInput < 1) {
-                                        System.out.println("Invalid store number");
+                                        menu.println("Invalid store number");
                                         break;
                                     }
 
@@ -353,6 +351,12 @@ public class Start {
                                 // get user input
                                 int input = getIntInput(dub);
 
+                                // if the input is not within the range of the stores, throw error
+                                if (input > stores.size() || input < 1) {
+                                    menu.println("Invalid store number");
+                                    break;
+                                }
+
                                 // get the store id
                                 String storeId = stores.get(input - 1);
 
@@ -389,9 +393,9 @@ public class Start {
                                 ArrayList<String> commonWords = getMostCommonWords(wordList);
 
                                 // print the most common words
-                                System.out.println("Most common words: ");
+                                menu.println("Most common words: ");
                                 for (int i = 0; i < commonWords.size(); i++) {
-                                    System.out.println(commonWords.get(i));
+                                    menu.println(commonWords.get(i));
                                 }
 
                                 // ask if they want to edit the description, delete the store or edit the name
@@ -444,7 +448,7 @@ public class Start {
                                         getStringInput("Enter store description"));
 
                                 // say the store has been created
-                                System.out.println("Store created");
+                                menu.println("Store created");
                                 break;
                             case 3:
                                 // view messages
@@ -459,7 +463,7 @@ public class Start {
                                 String buyer = getStringInput("Enter buyer email");
                                 String buyerId = database.searchByField("email: " + buyer);
                                 if (buyerId == null) {
-                                    System.out.println("Buyer does not exist");
+                                    menu.println("Buyer does not exist");
                                     break;
                                 }
 
@@ -473,7 +477,7 @@ public class Start {
                                 System.exit(0);
                             default:
                                 // if the user enters an invalid option, throw error and end program
-                                System.out.println("Please enter a valid option");
+                                menu.println("Please enter a valid option");
                                 return;
                         }
                     }
@@ -489,7 +493,7 @@ public class Start {
 
                 // check if email is already in use
                 if (database.searchByField("email: " + email) != null) {
-                    System.out.println("Email already in use");
+                    menu.println("Email already in use");
                     return;
                 }
 
@@ -503,14 +507,14 @@ public class Start {
                 database.add(id, "blockedUsers", "{$#}{$#}");
 
                 // notify that they have registered and end program
-                System.out.println("You have registered.");
+                menu.println("You have registered.");
                 return;
 
             }
         } catch (Exception e) {
             // print stacktrace and error
             e.printStackTrace();
-            System.out.println("Error: " + e.getMessage());
+            menu.println("Error: " + e.getMessage());
         }
 
     }
