@@ -76,9 +76,6 @@ public class Start {
             throws Exception {
 
         while (true) {
-
-            // print hello world
-            System.out.println("Hello World");
             // get all messages between the two users
             ArrayList<String> messages = database
                     .searchAllByField(userType + ": " + ourUserId + ", " + otherUserType + ": " + otherUserId);
