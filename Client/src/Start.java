@@ -135,7 +135,10 @@ public class Start {
                 database.write(ourUserId, "blockedUsers", blockedString);
             } else if (message.toLowerCase().equals("edit")) {
                 // take in message id and edit it in the database
-                String messageId = getStringInput("Enter message ID to edit");
+                // taker in message id and delete it from database
+                String messageNumber = getStringInput("Enter message number to delete");
+                // get message id from messages
+                String messageId = messages.get(Integer.parseInt(messageNumber));
                 String newMessage = getStringInput("Enter new message");
                 database.write(messageId, "message", newMessage);
 
@@ -284,7 +287,7 @@ public class Start {
                                     "1. Search Sellers and Message\n2. View stores\n3. Delete account\n4. Exit");
 
                             if (input == 4) {
-                                break;
+                                return;
                             }
 
                             // switch statement for the input
@@ -350,8 +353,6 @@ public class Start {
                             }
 
                         }
-
-                        break;
                     case 2:
                         // if theyre selling, display the selling menu
                         // loop infinitely until option 1 is selected
