@@ -318,7 +318,8 @@ public class Start {
                                                 + database
                                                         .searchAllByField(
                                                                 "seller: " + database.get(stores.get(i), "owner"))
-                                                        .size());
+                                                        .size()
+                                                + " | " + database.get(stores.get(i), "description"));
                                     }
 
                                     // get input for store
