@@ -21,6 +21,24 @@ public class Start {
         return menu.getStringInput(prompt);
     }
 
+    // method that writes to a new text file with the given path
+    public void writeToFile(String path, String text) {
+        // check that the path is valid
+        if (path == null || path.equals("")) {
+            menu.println("Invalid path");
+            return;
+        }
+
+        // write to the file
+        try {
+            java.io.PrintWriter writer = new java.io.PrintWriter(path, "UTF-8");
+            writer.println(text);
+            writer.close();
+        } catch (java.io.IOException e) {
+            menu.println("Error writing to file");
+        }
+    }
+
     // method that finds and sorts the most common list of words from an arraylist
     // of messsage strings
     public ArrayList<String> getMostCommonWords(ArrayList<String> messages) {
@@ -96,7 +114,7 @@ public class Start {
 
             // get message input
             String message = getStringInput(
-                    "Enter message or type \nExit to Exit \nBlock to Block User\nEdit to Edit Message\nDelete to Delete Message");
+                    "Enter message or type \nExit to Exit \nBlock to Block User\nEdit to Edit Message\nDelete to Delete Message\nDownload to Download Messages");
 
             // if message is exit, exit the method
             if (message.toLowerCase().equals("exit")) {
@@ -125,6 +143,16 @@ public class Start {
                 // taker in message id and delete it from database
                 String messageId = getStringInput("Enter message ID to delete");
                 database.delete(messageId);
+            } else if (message.toLowerCase().equals("download")) {
+                // download all messages to a text file
+                String path = getStringInput("Enter path to save file");
+                String text = "";
+                for (int i = 0; i < messages.size(); i++) {
+                    text += "Message: " + database.get(messages.get(i), "message") + ", ID: " + messages.get(i)
+                            + ", Author: " + database.get(database.get(messages.get(i), "author"), "email");
+                }
+
+                this.writeToFile(path, text);
             }
 
             else {
