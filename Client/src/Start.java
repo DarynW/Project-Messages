@@ -253,7 +253,7 @@ public class Start {
             database = new Database();
 
             // give a menu to the user with login and register options
-            if (getIntInput("1. Login\n2. Register") == 2) {
+            if (getIntInput("1. Login\n2. Register") == 1) {
                 // ask for email and password
                 String email = getStringInput("Enter your email");
                 String password = getStringInput("Enter your password");
