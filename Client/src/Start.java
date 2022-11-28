@@ -500,7 +500,7 @@ public class Start {
                                     }
 
                                     // if the seller exists, display messages
-                                    displayMessageInteraction(userId, buyerId, "buyer", "seller");
+                                    displayMessageInteraction(userId, buyerId, "seller", "buyer");
 
                                     break;
                                 case 6:
