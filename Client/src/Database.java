@@ -280,6 +280,8 @@ public class Database {
     }
 
     public String searchByField(String tags) throws Exception {
+        if (searchAllByField(tags).size() == 0)
+            return null;
         return searchAllByField(tags).get(0);
     }
 
