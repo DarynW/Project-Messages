@@ -492,7 +492,7 @@ public class Start {
                                     break;
                                 case 5:
                                     // prompt for seller email and start message with them
-                                    String buyer = getStringInput("Enter buyer email");
+                                    String buyer = getStringInput("Enter user email");
                                     String buyerId = database.searchByField("email: " + buyer);
                                     if (buyerId == null) {
                                         menu.println("Buyer does not exist");
