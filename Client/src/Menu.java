@@ -43,6 +43,8 @@ public class Menu {
             currentText = "";
             printText();
             clicked = true;
+            // clear the textfield
+            text.setText("");
         });
 
         // add listener to check if the enter key is pressed
