@@ -241,247 +241,255 @@ public class Start {
                 }
 
                 // ask if theyre buying or selling
-                boolean isBuyer = getStringInput("1. Buyer\n2. Seller").equals("1");
+                int optionPicked = getIntInput("1. Buyer\n2. Seller\n3. Delete Account");
 
-                // if the user is a buyer
-                if (isBuyer) {
-                    // loop infinitely until option 1 is selected
-                    while (true) {
-                        // list menu of options for viewing messages, viewing stores, deleting account
-                        // and exiting
-                        int input = getIntInput(
-                                "1. Search Sellers and Message\n2. View stores\n3. Delete account\n4. Exit");
+                switch (optionPicked) {
+                    case 1:
+                        // if theyre buying, display the buying menu
+                        // loop infinitely until option 1 is selected
+                        while (true) {
+                            // list menu of options for viewing messages, viewing stores, deleting account
+                            // and exiting
+                            int input = getIntInput(
+                                    "1. Search Sellers and Message\n2. View stores\n3. Delete account\n4. Exit");
 
-                        if (input == 4) {
-                            break;
+                            if (input == 4) {
+                                break;
+                            }
+
+                            // switch statement for the input
+                            switch (input) {
+                                // if input is 1, view messages
+                                case 1:
+                                    // prompt for seller email and start message with them
+                                    String sellerEmail = getStringInput("Enter seller email");
+                                    String sellerId = database.searchByField("email: " + sellerEmail);
+                                    if (sellerId == null) {
+                                        menu.println("Seller does not exist");
+                                        break;
+                                    }
+
+                                    // if the seller exists, display messages
+                                    displayMessageInteraction(userId, sellerId, "buyer", "seller");
+
+                                    break;
+                                // if input is 2, view stores
+                                case 2:
+                                    // get all stores
+                                    ArrayList<String> stores = database.searchAllByField("type: store");
+
+                                    // loop through stores and display them
+                                    for (int i = 0; i < stores.size(); i++) {
+                                        menu.println((i + 1) + ". " + database.get(stores.get(i), "name")
+                                                + " | Messages Sent: "
+                                                + database
+                                                        .searchAllByField(
+                                                                "seller: " + database.get(stores.get(i), "owner"))
+                                                        .size());
+                                    }
+
+                                    // get input for store
+                                    int storeInput = getIntInput("Enter store number or 0 to exit");
+
+                                    // if input is 0, exit the method
+                                    if (storeInput == 0) {
+                                        break;
+                                    } else {
+
+                                        // check if the number is within the range of the stores
+                                        if (storeInput > stores.size() || storeInput < 1) {
+                                            menu.println("Invalid store number");
+                                            break;
+                                        }
+
+                                        // if input is not 0, get the store id
+                                        String storeId = stores.get(storeInput - 1);
+
+                                        // get owner id from store
+                                        String ownerId = database.get(storeId, "owner");
+
+                                        // get all messages between buyer and seller
+                                        displayMessageInteraction(userId, ownerId, "buyer", "seller");
+                                    }
+                                    break;
+                                // if input is 3, delete account
+                                case 3:
+                                    // delete buyer
+                                    database.delete(userId);
+                                    return;
+                            }
+
                         }
 
-                        // switch statement for the input
-                        switch (input) {
-                            // if input is 1, view messages
-                            case 1:
-                                // prompt for seller email and start message with them
-                                String sellerEmail = getStringInput("Enter seller email");
-                                String sellerId = database.searchByField("email: " + sellerEmail);
-                                if (sellerId == null) {
-                                    menu.println("Seller does not exist");
-                                    break;
-                                }
+                        break;
+                    case 2:
+                        // if theyre selling, display the selling menu
+                        // loop infinitely until option 1 is selected
+                        while (true) {
+                            // here we list all of the stores
+                            // present menu where they can view their stores, create a store, view their
+                            // messages or delete their account or exit the programs
+                            int option = getIntInput(
+                                    "1. View stores\n2. Create store\n3. View messages\n4. Delete account\n5. Search User To Message\n6. Exit");
 
-                                // if the seller exists, display messages
-                                displayMessageInteraction(userId, sellerId, "buyer", "seller");
+                            // switch statement for the menu
+                            switch (option) {
+                                case 1:
+                                    // view stores
+                                    // get all stores that the user owns
+                                    ArrayList<String> stores = database.searchAllByField("owner: " + userId);
 
-                                break;
-                            // if input is 2, view stores
-                            case 2:
-                                // get all stores
-                                ArrayList<String> stores = database.searchAllByField("type: store");
+                                    String dub = "";
 
-                                // loop through stores and display them
-                                for (int i = 0; i < stores.size(); i++) {
-                                    menu.println((i + 1) + ". " + database.get(stores.get(i), "name")
-                                            + " | Messages Sent: "
-                                            + database
-                                                    .searchAllByField("seller: " + database.get(stores.get(i), "owner"))
-                                                    .size());
-                                }
+                                    // loop through the stores and display them
+                                    for (int i = 0; i < stores.size(); i++) {
+                                        dub += (i + 1) + ". " + database.get(stores.get(i), "name");
+                                    }
 
-                                // get input for store
-                                int storeInput = getIntInput("Enter store number or 0 to exit");
+                                    // print choose a store to modify
+                                    dub += "\nChoose a store";
 
-                                // if input is 0, exit the method
-                                if (storeInput == 0) {
-                                    break;
-                                } else {
+                                    // get user input
+                                    int input = getIntInput(dub);
 
-                                    // check if the number is within the range of the stores
-                                    if (storeInput > stores.size() || storeInput < 1) {
+                                    // if the input is not within the range of the stores, throw error
+                                    if (input > stores.size() || input < 1) {
                                         menu.println("Invalid store number");
                                         break;
                                     }
 
-                                    // if input is not 0, get the store id
-                                    String storeId = stores.get(storeInput - 1);
+                                    // get the store id
+                                    String storeId = stores.get(input - 1);
 
-                                    // get owner id from store
-                                    String ownerId = database.get(storeId, "owner");
+                                    // list the most common words used in this users messages
+                                    ArrayList<String> messages = database.searchAllByField("seller: " + userId);
 
-                                    // get all messages between buyer and seller
-                                    displayMessageInteraction(userId, ownerId, "buyer", "seller");
-                                }
-                                break;
-                            // if input is 3, delete account
-                            case 3:
-                                // delete buyer
-                                database.delete(userId);
-                                return;
-                        }
+                                    // create a hashmap to store the words and their frequency
+                                    HashMap<String, Integer> words = new HashMap<String, Integer>();
 
-                    }
+                                    // loop through the messages
+                                    for (int i = 0; i < messages.size(); i++) {
+                                        // get the message
+                                        String message = database.get(messages.get(i), "message");
 
-                }
+                                        // split the message into words
+                                        String[] messageWords = message.split(" ");
 
-                // if the user is a seller
-                if (!isBuyer) {
-                    // loop infinitely until option 1 is selected
-                    while (true) {
-                        // here we list all of the stores
-                        // present menu where they can view their stores, create a store, view their
-                        // messages or delete their account or exit the programs
-                        int option = getIntInput(
-                                "1. View stores\n2. Create store\n3. View messages\n4. Delete account\n5. Search User To Message\n6. Exit");
-
-                        // switch statement for the menu
-                        switch (option) {
-                            case 1:
-                                // view stores
-                                // get all stores that the user owns
-                                ArrayList<String> stores = database.searchAllByField("owner: " + userId);
-
-                                String dub = "";
-
-                                // loop through the stores and display them
-                                for (int i = 0; i < stores.size(); i++) {
-                                    dub += (i + 1) + ". " + database.get(stores.get(i), "name");
-                                }
-
-                                // print choose a store to modify
-                                dub += "\nChoose a store";
-
-                                // get user input
-                                int input = getIntInput(dub);
-
-                                // if the input is not within the range of the stores, throw error
-                                if (input > stores.size() || input < 1) {
-                                    menu.println("Invalid store number");
-                                    break;
-                                }
-
-                                // get the store id
-                                String storeId = stores.get(input - 1);
-
-                                // list the most common words used in this users messages
-                                ArrayList<String> messages = database.searchAllByField("seller: " + userId);
-
-                                // create a hashmap to store the words and their frequency
-                                HashMap<String, Integer> words = new HashMap<String, Integer>();
-
-                                // loop through the messages
-                                for (int i = 0; i < messages.size(); i++) {
-                                    // get the message
-                                    String message = database.get(messages.get(i), "message");
-
-                                    // split the message into words
-                                    String[] messageWords = message.split(" ");
-
-                                    // loop through the words
-                                    for (int j = 0; j < messageWords.length; j++) {
-                                        // if the word is already in the hashmap, increment the value
-                                        if (words.containsKey(messageWords[j])) {
-                                            words.put(messageWords[j], words.get(messageWords[j]) + 1);
-                                        } else {
-                                            // if the word is not in the hashmap, add it with a value of 1
-                                            words.put(messageWords[j], 1);
+                                        // loop through the words
+                                        for (int j = 0; j < messageWords.length; j++) {
+                                            // if the word is already in the hashmap, increment the value
+                                            if (words.containsKey(messageWords[j])) {
+                                                words.put(messageWords[j], words.get(messageWords[j]) + 1);
+                                            } else {
+                                                // if the word is not in the hashmap, add it with a value of 1
+                                                words.put(messageWords[j], 1);
+                                            }
                                         }
                                     }
-                                }
 
-                                // create a list of the words
-                                ArrayList<String> wordList = new ArrayList<String>(words.keySet());
+                                    // create a list of the words
+                                    ArrayList<String> wordList = new ArrayList<String>(words.keySet());
 
-                                // sort the list by the frequency of the words
-                                ArrayList<String> commonWords = getMostCommonWords(wordList);
+                                    // sort the list by the frequency of the words
+                                    ArrayList<String> commonWords = getMostCommonWords(wordList);
 
-                                // print the most common words
-                                menu.println("Most common words: ");
-                                for (int i = 0; i < commonWords.size(); i++) {
-                                    menu.println(commonWords.get(i));
-                                }
+                                    // print the most common words
+                                    menu.println("Most common words: ");
+                                    for (int i = 0; i < commonWords.size(); i++) {
+                                        menu.println(commonWords.get(i));
+                                    }
 
-                                // ask if they want to edit the description, delete the store or edit the name
-                                int option2 = getIntInput(
-                                        "1. Edit description\n2. Delete store\n3. Edit name \n4. Exit");
+                                    // ask if they want to edit the description, delete the store or edit the name
+                                    int option2 = getIntInput(
+                                            "1. Edit description\n2. Delete store\n3. Edit name \n4. Exit");
 
-                                if (option2 == 4) {
+                                    if (option2 == 4) {
+                                        break;
+                                    }
+
+                                    // switch statement for the menu
+                                    switch (option2) {
+                                        case 1:
+                                            // edit description
+                                            // get new description
+                                            String description = getStringInput("Enter new description");
+
+                                            // set the description
+                                            database.write(storeId, "description", description);
+                                            break;
+                                        case 2:
+                                            // delete store
+                                            // delete the store
+                                            database.delete(storeId);
+                                            break;
+                                        case 3:
+                                            // edit name
+                                            // get new name
+                                            String name = getStringInput("Enter new name");
+
+                                            // set the name
+                                            database.write(storeId, "name", name);
+                                            break;
+                                    }
+
                                     break;
-                                }
+                                case 2:
+                                    // create store
 
-                                // switch statement for the menu
-                                switch (option2) {
-                                    case 1:
-                                        // edit description
-                                        // get new description
-                                        String description = getStringInput("Enter new description");
+                                    // create database entry
+                                    String storeId2 = database.createDocument();
+                                    // add type
+                                    database.add(storeId2, "type", "store");
+                                    // add owner
+                                    database.add(storeId2, "owner", userId);
+                                    // add name
+                                    database.add(storeId2, "name", getStringInput("Enter store name"));
+                                    // add description
+                                    database.add(storeId2, "description",
+                                            getStringInput("Enter store description"));
 
-                                        // set the description
-                                        database.write(storeId, "description", description);
-                                        break;
-                                    case 2:
-                                        // delete store
-                                        // delete the store
-                                        database.delete(storeId);
-                                        break;
-                                    case 3:
-                                        // edit name
-                                        // get new name
-                                        String name = getStringInput("Enter new name");
-
-                                        // set the name
-                                        database.write(storeId, "name", name);
-                                        break;
-                                }
-
-                                break;
-                            case 2:
-                                // create store
-
-                                // create database entry
-                                String storeId2 = database.createDocument();
-                                // add type
-                                database.add(storeId2, "type", "store");
-                                // add owner
-                                database.add(storeId2, "owner", userId);
-                                // add name
-                                database.add(storeId2, "name", getStringInput("Enter store name"));
-                                // add description
-                                database.add(storeId2, "description",
-                                        getStringInput("Enter store description"));
-
-                                // say the store has been created
-                                menu.println("Store created");
-                                break;
-                            case 3:
-                                // view messages
-                                messages("seller", userId);
-                                break;
-                            case 4:
-                                // delete account
-                                database.delete(userId);
-                                break;
-                            case 5:
-                                // prompt for seller email and start message with them
-                                String buyer = getStringInput("Enter buyer email");
-                                String buyerId = database.searchByField("email: " + buyer);
-                                if (buyerId == null) {
-                                    menu.println("Buyer does not exist");
+                                    // say the store has been created
+                                    menu.println("Store created");
                                     break;
-                                }
+                                case 3:
+                                    // view messages
+                                    messages("seller", userId);
+                                    break;
+                                case 4:
+                                    // delete account
+                                    database.delete(userId);
+                                    break;
+                                case 5:
+                                    // prompt for seller email and start message with them
+                                    String buyer = getStringInput("Enter buyer email");
+                                    String buyerId = database.searchByField("email: " + buyer);
+                                    if (buyerId == null) {
+                                        menu.println("Buyer does not exist");
+                                        break;
+                                    }
 
-                                // if the seller exists, display messages
-                                displayMessageInteraction(userId, buyerId, "buyer", "seller");
+                                    // if the seller exists, display messages
+                                    displayMessageInteraction(userId, buyerId, "buyer", "seller");
 
-                                break;
-                            case 6:
+                                    break;
+                                case 6:
 
-                                // exit program
-                                System.exit(0);
-                            default:
-                                // if the user enters an invalid option, throw error and end program
-                                menu.println("Please enter a valid option");
-                                return;
+                                    // exit program
+                                    System.exit(0);
+                                default:
+                                    // if the user enters an invalid option, throw error and end program
+                                    menu.println("Please enter a valid option");
+                                    return;
+                            }
                         }
-                    }
-
+                    case 3:
+                        // if theyre deleting their account, delete their account
+                        database.delete(userId);
+                        return;
+                    default:
+                        // if theyre doing something else, throw an error
+                        menu.println("Invalid input");
+                        return;
                 }
 
             } else {
