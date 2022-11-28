@@ -280,39 +280,7 @@ public class Database {
     }
 
     public String searchByField(String tags) throws Exception {
-
-        String[] tagArray = tags.split(", ");
-
-        // create arraylist
-        ArrayList<String> searchTags = new ArrayList<String>();
-
-        // loop through each tag
-        for (int i = 0; i < tagArray.length; i++) {
-            String tag = tagArray[i];
-            String[] tagParts = tag.split(": ");
-            searchTags.add(tagParts[0]);
-        }
-
-        ArrayList<String[][]> documents = readFile();
-        for (String[][] document : documents) {
-            // iterate through each key value pair
-            for (String[] fieldPair : document) {
-
-                // check if all tags match
-                boolean allTagsMatch = true;
-                for (String tag : searchTags) {
-                    if (!fieldPair[0].equals(tag)) {
-                        allTagsMatch = false;
-                    }
-                }
-
-                if (allTagsMatch) {
-                    return document[0][1];
-                }
-            }
-        }
-
-        return null;
+        return searchAllByField(tags).get(0);
     }
 
     /**

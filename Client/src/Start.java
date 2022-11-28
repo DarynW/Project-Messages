@@ -530,8 +530,10 @@ public class Start {
                 String email = getStringInput("Enter your email");
                 String password = getStringInput("Enter your password");
 
+                String result = database.searchByField("email: " + email);
+
                 // check if email is already in use
-                if (database.searchByField("email: " + email) != null) {
+                if (result != null) {
                     menu.println("Email already in use");
                     return;
                 }
