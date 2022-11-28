@@ -108,7 +108,7 @@ public class Start {
 
             // display messages
             for (int i = 0; i < messages.size(); i++) {
-                menu.println("Message: " + database.get(messages.get(i), "message") + ", ID: " + messages.get(i)
+                menu.println(i + ". Message: " + database.get(messages.get(i), "message") + ", ID: " + messages.get(i)
                         + ", Author: " + database.get(database.get(messages.get(i), "author"), "email"));
             }
 
@@ -141,7 +141,9 @@ public class Start {
 
             } else if (message.toLowerCase().equals("delete")) {
                 // taker in message id and delete it from database
-                String messageId = getStringInput("Enter message ID to delete");
+                String messageNumber = getStringInput("Enter message number to delete");
+                // get message id from messages
+                String messageId = messages.get(Integer.parseInt(messageNumber));
                 database.delete(messageId);
             } else if (message.toLowerCase().equals("download")) {
                 // download all messages to a text file
