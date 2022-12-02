@@ -615,7 +615,7 @@ public class Start {
                     database.add(id, "email", email);
                     database.add(id, "messages", "0");
                     database.add(id, "type", "user");
-                    database.add(id, "blockedUsers", "{$#}{$#}");
+                    database.add(id, "blockedUsers", ",");
 
                     // notify that they have registered and end program
                     menu.println("You have registered.");
