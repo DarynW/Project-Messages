@@ -139,11 +139,17 @@ public class Start {
             if (message.toLowerCase().equals("exit")) {
                 break;
             } else if (message.toLowerCase().equals("block")) {
-                String[] blocked = database.get(ourUserId, "blocked").split(",");
+                String blocked = database.get(ourUserId, "blocked");
+
+                // create array with size 0
+                String[] blockedArray = new String[0];
+
+                if (blocked != null)
+                    blockedArray = blocked.split(",");
 
                 // add TO THE FUCKING ARRAy
                 ArrayList<String> blockedList = new ArrayList<String>();
-                for (String block : blocked) {
+                for (String block : blockedArray) {
                     blockedList.add(block);
                 }
                 blockedList.add(otherUserId);
