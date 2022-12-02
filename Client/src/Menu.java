@@ -11,7 +11,7 @@ public class Menu {
 
     String currentText = "";
 
-    // create a gui
+    // Creates the GUI windows with buttons and a textfield
     public void go() {
         frame = new JFrame("Menu");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -56,6 +56,7 @@ public class Menu {
 
     }
 
+    // Porompts the user for an input and returns a String
     private String getInput() {
         // wait for button to be clicked
         while (!clicked) {
@@ -69,14 +70,14 @@ public class Menu {
         return text.getText();
     }
 
-    // method that removes all text from the north panel
+    // Removes all text from the north panel
     private void clearNorth() {
         north.removeAll();
         north.revalidate();
         north.repaint();
     }
 
-    // method that prints current text to the north panel
+    // Prints current text to the north panel
     private void printText() {
 
         // if there are more than 12 lines, remove any extra lines
@@ -94,6 +95,7 @@ public class Menu {
         north.repaint();
     }
 
+    // Mimics the print function in the CLI
     public void print(String s) {
         // add a new line to the north panel
         // add to current text
@@ -101,6 +103,7 @@ public class Menu {
         printText();
     }
 
+    // Mimics the println function in the CLI
     public void println(String s) {
         // add a new line to the north panel
         // add to current text
@@ -108,6 +111,7 @@ public class Menu {
         printText();
     }
 
+    // Prompts the user to enter an int character
     public int getIntInput(String prompt) {
         // print prompt
         println(prompt);
@@ -126,6 +130,7 @@ public class Menu {
         return output;
     }
 
+    // Prompts the user for a string
     public String getStringInput(String prompt) {
         // print prompt
         println(prompt);
