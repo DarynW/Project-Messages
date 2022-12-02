@@ -253,8 +253,9 @@ public class Start {
             database = new Database();
 
             while (true) {
+                int choice = getIntInput("1. Login\n2. Register\n3. Exit");
                 // give a menu to the user with login and register options
-                if (getIntInput("1. Login\n2. Register") == 1) {
+                if (choice == 1) {
                     // ask for email and password
                     String email = getStringInput("Enter your email");
                     String password = getStringInput("Enter your password");
@@ -525,7 +526,7 @@ public class Start {
                             return;
                     }
 
-                } else {
+                } else if (choice == 2) {
 
                     // register
                     // ask for email and password
@@ -551,6 +552,9 @@ public class Start {
 
                     // notify that they have registered and end program
                     menu.println("You have registered.");
+                } else {
+                    // if theyre doing something else
+                    return;
                 }
             }
         } catch (Exception e) {
