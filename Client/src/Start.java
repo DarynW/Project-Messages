@@ -33,6 +33,11 @@ public class Start {
 
         // write to the file
         try {
+            // create a new uuid
+            String uuid = java.util.UUID.randomUUID().toString();
+
+            path = path + uuid + ".txt";
+
             // create a new file
             File file = new File(path);
 
