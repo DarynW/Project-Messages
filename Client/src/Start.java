@@ -379,9 +379,36 @@ public class Start {
                                     case 2:
                                         // get all stores
                                         ArrayList<String> stores = database.searchAllByField("type: store");
+                                        ArrayList<String> invalidStores = new ArrayList<String>();
 
                                         // loop through stores and display them
                                         for (int i = 0; i < stores.size(); i++) {
+                                            // if the seller has our user blocked
+
+                                            // unparsed blockedlist
+                                            String blockedList = database.get(database.get(stores.get(i), "owner"),
+                                                    "blockedList");
+
+                                            // if the blocked list is not empty
+                                            if (!blockedList.equals("")) {
+                                                // split the blocked list by commas
+                                                String[] blocked = blockedList.split(",");
+
+                                                // convert to arraylist
+                                                ArrayList<String> blockedListArray = new ArrayList<String>();
+
+                                                for (String block : blocked) {
+                                                    blockedListArray.add(block);
+                                                }
+
+                                                // if the user is in the blocked list, skip this store
+                                                if (blockedListArray.contains(userId)) {
+                                                    invalidStores.add(stores.get(i));
+                                                    menu.println("(Invisible)");
+                                                    continue;
+                                                }
+                                            }
+
                                             menu.println((i + 1) + ". " + database.get(stores.get(i), "name")
                                                     + " | Messages Sent: "
                                                     + database
@@ -400,7 +427,8 @@ public class Start {
                                         } else {
 
                                             // check if the number is within the range of the stores
-                                            if (storeInput > stores.size() || storeInput < 1) {
+                                            if (storeInput > stores.size() || storeInput < 1
+                                                    || invalidStores.contains(stores.get(storeInput - 1))) {
                                                 menu.println("Invalid store number");
                                                 break;
                                             }
