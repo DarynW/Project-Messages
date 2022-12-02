@@ -35,6 +35,8 @@ public class Start {
             writer.println(text);
             writer.close();
         } catch (java.io.IOException e) {
+            // print the error message
+            menu.println(e.getMessage());
             menu.println("Error writing to file");
         }
     }
