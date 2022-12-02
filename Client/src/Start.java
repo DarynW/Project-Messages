@@ -390,7 +390,7 @@ public class Start {
                                                     "blockedList");
 
                                             // if the blocked list is not empty
-                                            if (!blockedList.equals("")) {
+                                            if (blockedList != null) {
                                                 // split the blocked list by commas
                                                 String[] blocked = blockedList.split(",");
 
