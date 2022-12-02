@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 // import File
 import java.io.File;
+//import scanner
+import java.util.Scanner;
 
 public class Start {
 
@@ -131,7 +133,7 @@ public class Start {
 
             // get message input
             String message = getStringInput(
-                    "Enter message or type \nExit to Exit \nBlock to Block User\nEdit to Edit Message\nDelete to Delete Message\nDownload to Download Messages");
+                    "Enter message or type \nExit to Exit \nBlock to Block User\nEdit to Edit Message\nDelete to Delete Message\nDownload to Download Messages\nUpload to Upload Messages");
 
             // if message is exit, exit the method
             if (message.toLowerCase().equals("exit")) {
@@ -176,7 +178,50 @@ public class Start {
                 this.writeToFile(".", text);
             }
 
-            else {
+            else if (message.toLowerCase().equals("upload")) {
+                // prompt for txt file path
+                String path = getStringInput("Enter path to file");
+                // read file with scanner
+                String text = "";
+
+                try {
+                    File file = new File(path);
+                    Scanner scanner = new Scanner(file);
+                    while (scanner.hasNextLine()) {
+                        text += scanner.nextLine();
+                    }
+                    scanner.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                // check if the user has blocked this user from messaging them
+                String[] blocked = database.get(otherUserId, "blockedUsers").split(",");
+
+                // turn it into an arraylist
+                ArrayList<String> blockedList = new ArrayList<String>();
+
+                for (String block : blocked) {
+                    blockedList.add(block);
+                }
+
+                // if they have blocked them, inform the user and return
+                if (blockedList.contains(ourUserId)) {
+                    menu.println("You have been blocked from messaging this user");
+                    return;
+                }
+
+                // if message is not exit, add the message to the database
+                String newMessageId = database.createDocument();
+                database.add(newMessageId, "message", text);
+                // author
+                database.add(newMessageId, "author", ourUserId);
+                database.add(newMessageId, userType, ourUserId);
+                database.add(newMessageId, otherUserType, otherUserId);
+                // add timestamps
+                database.add(newMessageId, "timestamp", System.currentTimeMillis() + "");
+
+            } else {
                 // check if the user has blocked this user from messaging them
                 String[] blocked = database.get(otherUserId, "blockedUsers").split(",");
 
