@@ -36,7 +36,7 @@ public class Start {
             // create a new uuid
             String uuid = java.util.UUID.randomUUID().toString();
 
-            path = path + uuid + ".txt";
+            path = path + uuid + "_Messages.txt";
 
             // create a new file
             File file = new File(path);
@@ -167,14 +167,13 @@ public class Start {
                 database.delete(messageId);
             } else if (message.toLowerCase().equals("download")) {
                 // download all messages to a text file
-                String path = getStringInput("Enter path to save file");
                 String text = "";
                 for (int i = 0; i < messages.size(); i++) {
                     text += "Message: " + database.get(messages.get(i), "message") + ", ID: " + messages.get(i)
                             + ", Author: " + database.get(database.get(messages.get(i), "author"), "email");
                 }
 
-                this.writeToFile(path, text);
+                this.writeToFile(".", text);
             }
 
             else {
