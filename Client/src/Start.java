@@ -3,6 +3,8 @@
 import java.util.ArrayList;
 // hashmap
 import java.util.HashMap;
+// import File
+import java.io.File;
 
 public class Start {
 
@@ -31,13 +33,21 @@ public class Start {
 
         // write to the file
         try {
+            // create a new file
+            File file = new File(path);
+
+            // if the file doesn't exist, create it
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            // create a new file writer
             java.io.PrintWriter writer = new java.io.PrintWriter(path, "UTF-8");
             writer.println(text);
             writer.close();
         } catch (java.io.IOException e) {
             // print the error message
             menu.println(e.getMessage());
-            menu.println("Error writing to file");
         }
     }
 
