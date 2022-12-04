@@ -26,11 +26,12 @@ public class Start {
     }
 
     // method that writes to a new text file with the given path
-    public void writeToFile(String path, String text) {
+    // returns the uuid of the file made
+    public String writeToFile(String path, String text) {
         // check that the path is valid
         if (path == null || path.equals("")) {
             menu.println("Invalid path");
-            return;
+            return null;
         }
 
         // write to the file
@@ -52,9 +53,11 @@ public class Start {
             java.io.PrintWriter writer = new java.io.PrintWriter(path, "UTF-8");
             writer.println(text);
             writer.close();
+            return uuid;
         } catch (java.io.IOException e) {
             // print the error message
             menu.println(e.getMessage());
+            return null;
         }
     }
 
