@@ -3,6 +3,10 @@
 import java.util.ArrayList;
 // hashmap
 import java.util.HashMap;
+// import File
+import java.io.File;
+//import scanner
+import java.util.Scanner;
 
 public class Start {
 
@@ -22,22 +26,38 @@ public class Start {
     }
 
     // method that writes to a new text file with the given path
-    public void writeToFile(String path, String text) {
+    // returns the uuid of the file made
+    public String writeToFile(String path, String text) {
         // check that the path is valid
         if (path == null || path.equals("")) {
             menu.println("Invalid path");
-            return;
+            return null;
         }
 
         // write to the file
         try {
+            // create a new uuid
+            String uuid = java.util.UUID.randomUUID().toString();
+
+            path = path + uuid + "_Messages.txt";
+
+            // create a new file
+            File file = new File(path);
+
+            // if the file doesn't exist, create it
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            // create a new file writer
             java.io.PrintWriter writer = new java.io.PrintWriter(path, "UTF-8");
             writer.println(text);
             writer.close();
+            return uuid;
         } catch (java.io.IOException e) {
             // print the error message
             menu.println(e.getMessage());
-            menu.println("Error writing to file");
+            return null;
         }
     }
 
@@ -116,17 +136,23 @@ public class Start {
 
             // get message input
             String message = getStringInput(
-                    "Enter message or type \nExit to Exit \nBlock to Block User\nEdit to Edit Message\nDelete to Delete Message\nDownload to Download Messages");
+                    "Enter message or type \nExit to Exit \nBlock to Block User\nEdit to Edit Message\nDelete to Delete Message\nDownload to Download Messages\nUpload to Upload Messages");
 
             // if message is exit, exit the method
             if (message.toLowerCase().equals("exit")) {
                 break;
             } else if (message.toLowerCase().equals("block")) {
-                String[] blocked = database.get(ourUserId, "blocked").split(",");
+                String blocked = database.get(ourUserId, "blocked");
+
+                // create array with size 0
+                String[] blockedArray = new String[0];
+
+                if (blocked != null)
+                    blockedArray = blocked.split(",");
 
                 // add TO THE FUCKING ARRAy
                 ArrayList<String> blockedList = new ArrayList<String>();
-                for (String block : blocked) {
+                for (String block : blockedArray) {
                     blockedList.add(block);
                 }
                 blockedList.add(otherUserId);
@@ -152,17 +178,59 @@ public class Start {
                 database.delete(messageId);
             } else if (message.toLowerCase().equals("download")) {
                 // download all messages to a text file
-                String path = getStringInput("Enter path to save file");
                 String text = "";
                 for (int i = 0; i < messages.size(); i++) {
                     text += "Message: " + database.get(messages.get(i), "message") + ", ID: " + messages.get(i)
                             + ", Author: " + database.get(database.get(messages.get(i), "author"), "email");
                 }
 
-                this.writeToFile(path, text);
+                this.writeToFile(".", text);
             }
 
-            else {
+            else if (message.toLowerCase().equals("upload")) {
+                // prompt for txt file path
+                String path = getStringInput("Enter path to file");
+                // read file with scanner
+                String text = "";
+
+                try {
+                    File file = new File(path);
+                    Scanner scanner = new Scanner(file);
+                    while (scanner.hasNextLine()) {
+                        text += scanner.nextLine();
+                    }
+                    scanner.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                // check if the user has blocked this user from messaging them
+                String[] blocked = database.get(otherUserId, "blockedUsers").split(",");
+
+                // turn it into an arraylist
+                ArrayList<String> blockedList = new ArrayList<String>();
+
+                for (String block : blocked) {
+                    blockedList.add(block);
+                }
+
+                // if they have blocked them, inform the user and return
+                if (blockedList.contains(ourUserId)) {
+                    menu.println("You have been blocked from messaging this user");
+                    return;
+                }
+
+                // if message is not exit, add the message to the database
+                String newMessageId = database.createDocument();
+                database.add(newMessageId, "message", text);
+                // author
+                database.add(newMessageId, "author", ourUserId);
+                database.add(newMessageId, userType, ourUserId);
+                database.add(newMessageId, otherUserType, otherUserId);
+                // add timestamps
+                database.add(newMessageId, "timestamp", System.currentTimeMillis() + "");
+
+            } else {
                 // check if the user has blocked this user from messaging them
                 String[] blocked = database.get(otherUserId, "blockedUsers").split(",");
 
@@ -314,9 +382,36 @@ public class Start {
                                     case 2:
                                         // get all stores
                                         ArrayList<String> stores = database.searchAllByField("type: store");
+                                        ArrayList<String> invalidStores = new ArrayList<String>();
 
                                         // loop through stores and display them
                                         for (int i = 0; i < stores.size(); i++) {
+                                            // if the seller has our user blocked
+
+                                            // unparsed blockedlist
+                                            String blockedList = database.get(database.get(stores.get(i), "owner"),
+                                                    "blockedList");
+
+                                            // if the blocked list is not empty
+                                            if (blockedList != null) {
+                                                // split the blocked list by commas
+                                                String[] blocked = blockedList.split(",");
+
+                                                // convert to arraylist
+                                                ArrayList<String> blockedListArray = new ArrayList<String>();
+
+                                                for (String block : blocked) {
+                                                    blockedListArray.add(block);
+                                                }
+
+                                                // if the user is in the blocked list, skip this store
+                                                if (blockedListArray.contains(userId)) {
+                                                    invalidStores.add(stores.get(i));
+                                                    menu.println("(Invisible)");
+                                                    continue;
+                                                }
+                                            }
+
                                             menu.println((i + 1) + ". " + database.get(stores.get(i), "name")
                                                     + " | Messages Sent: "
                                                     + database
@@ -335,7 +430,8 @@ public class Start {
                                         } else {
 
                                             // check if the number is within the range of the stores
-                                            if (storeInput > stores.size() || storeInput < 1) {
+                                            if (storeInput > stores.size() || storeInput < 1
+                                                    || invalidStores.contains(stores.get(storeInput - 1))) {
                                                 menu.println("Invalid store number");
                                                 break;
                                             }
@@ -550,7 +646,7 @@ public class Start {
                     database.add(id, "email", email);
                     database.add(id, "messages", "0");
                     database.add(id, "type", "user");
-                    database.add(id, "blockedUsers", "{$#}{$#}");
+                    database.add(id, "blockedUsers", ",");
 
                     // notify that they have registered and end program
                     menu.println("You have registered.");
