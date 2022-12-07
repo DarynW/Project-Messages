@@ -123,7 +123,7 @@ public class Menu {
                 output = Integer.parseInt(getInput());
 
                 // print output
-                println("This is the output: " + output);
+                // println("This is the output: " + output);
 
                 break;
             } catch (NumberFormatException e) {
