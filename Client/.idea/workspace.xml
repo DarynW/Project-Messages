@@ -4,22 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a3dfe20-60ba-48cb-8b31-54087cfdeef5" name="Changes" comment="" />
+    <list default="true" id="4a3dfe20-60ba-48cb-8b31-54087cfdeef5" name="Changes" comment="finished getMostCommonWordsTest">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/RealStart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/RealStart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Start.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RealStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RealStart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/database.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/database.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/Server/ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/Server/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/Server/Start.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -48,6 +53,14 @@
       <option name="presentableId" value="Default" />
       <updated>1670003871749</updated>
     </task>
+    <task id="LOCAL-00001" summary="finished getMostCommonWordsTest">
+      <created>1670008399022</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670008399022</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -60,5 +73,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="finished getMostCommonWordsTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished getMostCommonWordsTest" />
   </component>
 </project>
