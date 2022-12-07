@@ -60,9 +60,11 @@ public class Menu {
     private String getInput() {
         // wait for button to be clicked
         while (true) {
-            if (clicked && !text.getText().equals(""))
+            String s = text.getText();
+
+            if (clicked && !s.equals("") && s != null)
                 break;
-            if (clicked && text.getText().equals(""))
+            if (clicked && (s.equals("") || s == null))
                 clicked = false;
             try {
                 Thread.sleep(100);
