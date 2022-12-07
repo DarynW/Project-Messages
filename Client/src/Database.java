@@ -146,6 +146,8 @@ public class Database {
     }
 
     public void write(String documentID, String key, String value) throws Exception {
+        if (value.equals(""))
+            value = "Nothing Typed";
 
         if (!this.documentExists(documentID)) {
             throw new Exception("Document does not exist");
@@ -171,6 +173,10 @@ public class Database {
     }
 
     public void add(String documentID, String key, String value) throws Exception {
+
+        // replace blank values with null
+        if (value.equals(""))
+            value = "Nothing Typed";
 
         if (!this.documentExists(documentID)) {
             throw new Exception("Document does not exist");
