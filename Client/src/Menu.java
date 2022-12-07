@@ -59,18 +59,7 @@ public class Menu {
     // Porompts the user for an input and returns a String
     private String getInput() {
         // wait for button to be clicked but make sure there is text in the textfield
-        while (true) {
-            if (clicked && !text.getText().equals("")) {
-                clicked = false;
-                return text.getText();
-            }
-
-            if (clicked && text.getText().equals("")) {
-                clicked = false;
-            }
-
-            printText();
-
+        while (!clicked) {
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
@@ -78,6 +67,13 @@ public class Menu {
             }
         }
 
+        clicked = false;
+
+        String s = text.getText();
+        if (s.equals("")) {
+            return getInput();
+        }
+        return s;
     }
 
     // Removes all text from the north panel
