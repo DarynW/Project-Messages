@@ -58,23 +58,15 @@ public class Menu {
 
     // Porompts the user for an input and returns a String
     private String getInput() {
-        // wait for button to be clicked
+        // wait for button to be clicked but make sure there is text in the textfield
         while (true) {
-            String s = text.getText();
-
-            if (clicked && !s.equals("") && s != null) {
+            if (clicked && !text.getText().equals("")) {
                 clicked = false;
-                System.out.println(s);
-                return s;
+                return text.getText();
             }
 
-            if (clicked && (s.equals("") || s == null))
+            if (clicked && text.getText().equals("")) {
                 clicked = false;
-
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
             }
         }
 
