@@ -143,11 +143,17 @@ public class Database {
     }
 
     public void write(String documentID, String key, String value) throws Exception {
+
+        // return is value is null
+        if (value == null || value.equals(""))
+            return;
+
         if (!this.documentExists(documentID)) {
             throw new Exception("Document does not exist");
         }
         if (!this.fieldExists(documentID, key)) {
-            throw new Exception("Key does not exist.");
+            // add the field
+            add(documentID, key, value);
         }
 
         ArrayList<String[][]> documents = readFile();
@@ -166,6 +172,11 @@ public class Database {
     }
 
     public void add(String documentID, String key, String value) throws Exception {
+
+        // return is value is null
+        if (value == null || value.equals(""))
+            return;
+
         if (!this.documentExists(documentID)) {
             throw new Exception("Document does not exist");
         }
