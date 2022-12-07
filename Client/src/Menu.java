@@ -121,10 +121,6 @@ public class Menu {
         while (true) {
             try {
                 output = Integer.parseInt(getInput());
-
-                // print output
-                // println("This is the output: " + output);
-
                 break;
             } catch (NumberFormatException e) {
                 println("Please enter a valid number");

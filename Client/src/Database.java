@@ -87,7 +87,10 @@ public class Database {
 
                 String[] field = new String[2];
                 field[0] = parts[i];
-                field[1] = parts[i + 1];
+                if (i + 1 > parts.length)
+                    field[1] = "";
+                else
+                    field[1] = parts[i + 1];
                 parsedDocument.add(field);
             }
 
