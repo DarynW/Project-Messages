@@ -87,7 +87,7 @@ public class Database {
 
                 String[] field = new String[2];
                 field[0] = parts[i];
-                if (i + 1 > parts.length)
+                if (i + 1 >= parts.length)
                     field[1] = "";
                 else
                     field[1] = parts[i + 1];
