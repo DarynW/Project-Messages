@@ -69,6 +69,8 @@ public class Menu {
                 clicked = false;
             }
 
+            printText();
+
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
