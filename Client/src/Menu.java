@@ -62,18 +62,21 @@ public class Menu {
         while (true) {
             String s = text.getText();
 
-            if (clicked && !s.equals("") && s != null)
-                break;
+            if (clicked && !s.equals("") && s != null) {
+                clicked = false;
+                return s;
+            }
+
             if (clicked && (s.equals("") || s == null))
                 clicked = false;
+
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        clicked = false;
-        return text.getText();
+
     }
 
     // Removes all text from the north panel
@@ -126,8 +129,6 @@ public class Menu {
         while (true) {
             try {
                 output = Integer.parseInt(getInput());
-                // dont break if the input is blank
-
                 break;
             } catch (NumberFormatException e) {
                 println("Please enter a valid number");
