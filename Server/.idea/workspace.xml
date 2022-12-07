@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5a421c1-db18-445f-b919-b66ae461ca0e" name="Changes" comment="" />
+    <list default="true" id="c5a421c1-db18-445f-b919-b66ae461ca0e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/RealStart.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/RealStart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Start.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/RealStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/RealStart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.csv" beforeDir="false" afterPath="$PROJECT_DIR$/database.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Start.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,12 +35,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Start" />
+      <module name="Server" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Start" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
