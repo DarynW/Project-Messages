@@ -64,6 +64,7 @@ public class Menu {
 
             if (clicked && !s.equals("") && s != null) {
                 clicked = false;
+                System.out.println(s);
                 return s;
             }
 
