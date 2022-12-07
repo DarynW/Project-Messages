@@ -59,7 +59,11 @@ public class Menu {
     // Porompts the user for an input and returns a String
     private String getInput() {
         // wait for button to be clicked
-        while (!clicked) {
+        while (true) {
+            if (clicked && !text.getText().equals(""))
+                break;
+            if (clicked && text.getText().equals(""))
+                clicked = false;
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
@@ -120,6 +124,8 @@ public class Menu {
         while (true) {
             try {
                 output = Integer.parseInt(getInput());
+                // dont break if the input is blank
+
                 break;
             } catch (NumberFormatException e) {
                 println("Please enter a valid number");

@@ -144,10 +144,6 @@ public class Database {
 
     public void write(String documentID, String key, String value) throws Exception {
 
-        // return is value is null
-        if (value == null || value.equals(""))
-            return;
-
         if (!this.documentExists(documentID)) {
             throw new Exception("Document does not exist");
         }
@@ -172,10 +168,6 @@ public class Database {
     }
 
     public void add(String documentID, String key, String value) throws Exception {
-
-        // return is value is null
-        if (value == null || value.equals(""))
-            return;
 
         if (!this.documentExists(documentID)) {
             throw new Exception("Document does not exist");
