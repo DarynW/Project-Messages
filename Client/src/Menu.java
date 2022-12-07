@@ -70,7 +70,7 @@ public class Menu {
         clicked = false;
 
         String s = text.getText();
-        if (s.equals("")) {
+        if (s.equals("") || s == null) {
             return getInput();
         }
         return s;
