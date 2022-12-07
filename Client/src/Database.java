@@ -373,6 +373,8 @@ public class Database {
         for (int i = 0; i < tagArray.length; i++) {
             String tag = tagArray[i];
             String[] tagParts = tag.split(": ");
+            if (tagParts[1] == "")
+                tagParts[1] = "Nada";
             searchTags.add(tagParts);
         }
 
