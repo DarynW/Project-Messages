@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5a421c1-db18-445f-b919-b66ae461ca0e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Test Cases/DatabaseTester.java" afterDir="false" />
+    <list default="true" id="c5a421c1-db18-445f-b919-b66ae461ca0e" name="Changes" comment="finish server databaseReadFile test">
+      <change afterPath="$PROJECT_DIR$/src/Test Cases/DatabaseWriteFileTester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test Cases/databaseTestFile.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test Cases/test.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,24 +29,41 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2IMueGWxWB3sOvwHrAv0KLxsdkX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/darynwang/Documents/GitHub/Project-4/Server",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/darynwang/Documents/GitHub/Project-4/Server&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.DatabaseTester">
+}</component>
+  <component name="RunManager" selected="Application.DatabaseWriteFileTester">
+    <configuration name="DatabaseReadFileTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DatabaseReadFileTester" />
+      <module name="Server" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DatabaseTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DatabaseTester" />
+      <module name="Server" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DatabaseWriteFileTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DatabaseWriteFileTester" />
       <module name="Server" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -61,6 +78,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DatabaseWriteFileTester" />
+        <item itemvalue="Application.DatabaseReadFileTester" />
         <item itemvalue="Application.DatabaseTester" />
         <item itemvalue="Application.Start" />
       </list>
@@ -75,6 +94,14 @@
       <option name="presentableId" value="Default" />
       <updated>1670003866359</updated>
     </task>
+    <task id="LOCAL-00001" summary="finish server databaseReadFile test">
+      <created>1670712694072</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670712694072</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -87,5 +114,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="finish server databaseReadFile test" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish server databaseReadFile test" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Test Cases/DatabaseWriteFileTester.java</url>
+          <line>5</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
