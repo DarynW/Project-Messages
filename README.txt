@@ -5,3 +5,5 @@ There are two seperate README files that can be read inside the Client and Serve
 
 The Client and Server are two separate projects and are intended to be run seperately. 
 Doing this may be tedious, and it is recommended that the projects are opened seperately in seperate IDE windows.
+
+Fischer submitted every file to vocareum and brightspace.
