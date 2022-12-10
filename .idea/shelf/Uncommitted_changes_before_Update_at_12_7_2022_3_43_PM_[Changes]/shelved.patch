@@ -1,0 +1,478 @@
+Index: Server/database.csv
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>documentID{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}password{$@}1234{$@}email{$@}aniu{$@}messages{$@}0{$@}type{$@}user{$@}blockedUsers{$@}{$#}{$#}\r\ndocumentID{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}password{$@}4321{$@}email{$@}fishy{$@}messages{$@}0{$@}type{$@}user{$@}blockedUsers{$@}{$#}{$#}\r\ndocumentID{$@}4f09b0a4-3e60-411c-ace5-010f0d37176c{$@}type{$@}store{$@}owner{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}name{$@}store 1{$@}description{$@}this is store 1\r\ndocumentID{$@}b45388bc-d66f-4f48-8ffa-d76ebcc5d484{$@}type{$@}store{$@}owner{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}name{$@}store2{$@}description{$@}this is store 2\r\ndocumentID{$@}e6809b6a-3818-452e-b8f5-ea644753afbb{$@}message{$@}This is first message to aniu seller{$@}author{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}buyer{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}seller{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}timestamp{$@}1669673026765\r\ndocumentID{$@}4ade1a12-db08-438c-95f9-585ad081807c{$@}password{$@}4444{$@}email{$@}boiler{$@}messages{$@}0{$@}type{$@}user{$@}blockedUsers{$@}{$#}{$#}\r\ndocumentID{$@}bc1f3618-8390-42ad-a2ba-7ddd0d6caecb{$@}type{$@}store{$@}owner{$@}4ade1a12-db08-438c-95f9-585ad081807c{$@}name{$@}store 3 {$@}description{$@}this is store 3 of boiler\r\ndocumentID{$@}6ed41fcf-fa25-496e-ad4d-1e7300b0530b{$@}type{$@}store{$@}owner{$@}4ade1a12-db08-438c-95f9-585ad081807c{$@}name{$@}store 4{$@}description{$@}this is store 4 of boiler\r\ndocumentID{$@}54e283b1-8eb3-40d1-ba34-734bd01be6be{$@}message{$@}Hello this is boiler messaging fishy{$@}author{$@}4ade1a12-db08-438c-95f9-585ad081807c{$@}buyer{$@}4ade1a12-db08-438c-95f9-585ad081807c{$@}seller{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}timestamp{$@}1669673125273\r\ndocumentID{$@}cd74e33c-85d8-4cf9-a2d2-2799e17f0903{$@}message{$@}Hello fishy its aniu the seller{$@}author{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}buyer{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}seller{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}timestamp{$@}1669673175185\r\ndocumentID{$@}afeade2b-ee9b-493a-9436-ca096898e769{$@}message{$@}Hello back fishy, from aniu{$@}author{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}seller{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}buyer{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}timestamp{$@}1669673196473\r\ndocumentID{$@}020856a5-b4ba-438f-acab-75a0b10b019c{$@}message{$@}Hello boiler, this is aniu the seller{$@}author{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}buyer{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}seller{$@}4ade1a12-db08-438c-95f9-585ad081807c{$@}timestamp{$@}1669673224723\r\ndocumentID{$@}fff660a6-8d29-407c-b934-cca9ab02f65f{$@}message{$@}Hey boiler its me fishy the buyer{$@}author{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}buyer{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}seller{$@}4ade1a12-db08-438c-95f9-585ad081807c{$@}timestamp{$@}1669673326450\r\ndocumentID{$@}0ef2daa1-17d6-4f29-8895-a07142a5d6ac{$@}message{$@}This is second message from boiler to fishy{$@}author{$@}4ade1a12-db08-438c-95f9-585ad081807c{$@}buyer{$@}4ade1a12-db08-438c-95f9-585ad081807c{$@}seller{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}timestamp{$@}1669673485757\r\ndocumentID{$@}9c7c927b-3acc-425f-99b4-db15189f899f{$@}message{$@}This is third message from boiler seller to fishy buyer{$@}author{$@}4ade1a12-db08-438c-95f9-585ad081807c{$@}buyer{$@}4ade1a12-db08-438c-95f9-585ad081807c{$@}seller{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}timestamp{$@}1669673777636\r\ndocumentID{$@}83d360dc-8700-4206-9945-c5a25b642989{$@}message{$@}Hey fishy, its boiler seller. this is the fifth message{$@}author{$@}4ade1a12-db08-438c-95f9-585ad081807c{$@}seller{$@}4ade1a12-db08-438c-95f9-585ad081807c{$@}buyer{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}timestamp{$@}1669674835788\r\ndocumentID{$@}619310bf-ac49-4f0d-b046-40a68f31a567{$@}message{$@}Hello fishy buyer, this is aniu seller. Message 6{$@}author{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}seller{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}buyer{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}timestamp{$@}1669675093640\r\ndocumentID{$@}849b3d23-c280-4330-a6e1-c551fd9b1771{$@}message{$@}Hello aniu seller, I am blocking you now. -fishy buyer{$@}author{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}buyer{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}seller{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}timestamp{$@}1669675193754\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Server/database.csv b/Server/database.csv
+--- a/Server/database.csv	(revision 3fb53772d094fbeeb6329eabc0254a3221b0f82a)
++++ b/Server/database.csv	(date 1670010235965)
+@@ -1,5 +1,5 @@
+ documentID{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}password{$@}1234{$@}email{$@}aniu{$@}messages{$@}0{$@}type{$@}user{$@}blockedUsers{$@}{$#}{$#}
+-documentID{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}password{$@}4321{$@}email{$@}fishy{$@}messages{$@}0{$@}type{$@}user{$@}blockedUsers{$@}{$#}{$#}
++documentID{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}password{$@}4321{$@}email{$@}fishy{$@}messages{$@}0{$@}type{$@}user{$@}blockedUsers{$@}4ade1a12-db08-438c-95f9-585ad081807c,
+ documentID{$@}4f09b0a4-3e60-411c-ace5-010f0d37176c{$@}type{$@}store{$@}owner{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}name{$@}store 1{$@}description{$@}this is store 1
+ documentID{$@}b45388bc-d66f-4f48-8ffa-d76ebcc5d484{$@}type{$@}store{$@}owner{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}name{$@}store2{$@}description{$@}this is store 2
+ documentID{$@}e6809b6a-3818-452e-b8f5-ea644753afbb{$@}message{$@}This is first message to aniu seller{$@}author{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}buyer{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}seller{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}timestamp{$@}1669673026765
+@@ -16,3 +16,6 @@
+ documentID{$@}83d360dc-8700-4206-9945-c5a25b642989{$@}message{$@}Hey fishy, its boiler seller. this is the fifth message{$@}author{$@}4ade1a12-db08-438c-95f9-585ad081807c{$@}seller{$@}4ade1a12-db08-438c-95f9-585ad081807c{$@}buyer{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}timestamp{$@}1669674835788
+ documentID{$@}619310bf-ac49-4f0d-b046-40a68f31a567{$@}message{$@}Hello fishy buyer, this is aniu seller. Message 6{$@}author{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}seller{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}buyer{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}timestamp{$@}1669675093640
+ documentID{$@}849b3d23-c280-4330-a6e1-c551fd9b1771{$@}message{$@}Hello aniu seller, I am blocking you now. -fishy buyer{$@}author{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}buyer{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}seller{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}timestamp{$@}1669675193754
++documentID{$@}577ee16f-4d6c-4832-b398-076e47f7de8d{$@}message{$@}C:\Users\aniu2\Downloads{$@}author{$@}4ade1a12-db08-438c-95f9-585ad081807c{$@}seller{$@}4ade1a12-db08-438c-95f9-585ad081807c{$@}buyer{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}timestamp{$@}1670007275545
++documentID{$@}33f0a53d-cec7-4c4c-9632-ed4acaf483ed{$@}message{$@}This is the first test of the upload message function.This is new line testing.{$@}author{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}seller{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}buyer{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}timestamp{$@}1670008240800
++documentID{$@}d7edee18-052d-441a-80cc-a01624955026{$@}message{$@}E{$@}author{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}seller{$@}f7966ed5-1e00-4c0f-af4c-861d76b65b79{$@}buyer{$@}b6abc360-19f5-4cda-80d6-eb89d23e44c0{$@}timestamp{$@}1670008257845
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_30_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_30_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_30_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_30_PM_[Changes]/shelved.patch	(revision 3fb53772d094fbeeb6329eabc0254a3221b0f82a)
++++ /dev/null	(revision 3fb53772d094fbeeb6329eabc0254a3221b0f82a)
+@@ -1,116 +0,0 @@
+-Index: Server/.idea/vcs.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/Server/.idea/vcs.xml b/Server/.idea/vcs.xml
+-new file mode 100644
+---- /dev/null	(date 1669672809404)
+-+++ b/Server/.idea/vcs.xml	(date 1669672809404)
+-@@ -0,0 +1,6 @@
+-+<?xml version="1.0" encoding="UTF-8"?>
+-+<project version="4">
+-+  <component name="VcsDirectoryMappings">
+-+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+-+  </component>
+-+</project>
+-\ No newline at end of file
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"aa75681e-15bc-4bbf-b40f-69fe1a524219\" name=\"Changes\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2IC4hxyP3eRhwsnSkkgU6M6hAWu\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"jdk.selected.JAVA_MODULE\": \"openjdk-18\",\r\n    \"project.structure.last.edited\": \"Modules\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"aa75681e-15bc-4bbf-b40f-69fe1a524219\" name=\"Changes\" comment=\"\" />\r\n      <created>1669672353142</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1669672353142</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 0e4bbca113be114c2b58c81a17204ee32b3d5475)
+-+++ b/.idea/workspace.xml	(date 1669673341994)
+-@@ -4,7 +4,13 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="aa75681e-15bc-4bbf-b40f-69fe1a524219" name="Changes" comment="" />
+-+    <list default="true" id="aa75681e-15bc-4bbf-b40f-69fe1a524219" name="Changes" comment="Committing death onto intellij for weird setup stuff">
+-+      <change afterPath="$PROJECT_DIR$/Server/.idea/.gitignore" afterDir="false" />
+-+      <change afterPath="$PROJECT_DIR$/Server/.idea/misc.xml" afterDir="false" />
+-+      <change afterPath="$PROJECT_DIR$/Server/.idea/modules.xml" afterDir="false" />
+-+      <change afterPath="$PROJECT_DIR$/Server/.idea/vcs.xml" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-+    </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+-@@ -40,6 +46,14 @@
+-       <option name="presentableId" value="Default" />
+-       <updated>1669672353142</updated>
+-     </task>
+-+    <task id="LOCAL-00001" summary="Committing death onto intellij for weird setup stuff">
+-+      <created>1669672718273</created>
+-+      <option name="number" value="00001" />
+-+      <option name="presentableId" value="LOCAL-00001" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1669672718273</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="2" />
+-     <servers />
+-   </component>
+-   <component name="Vcs.Log.Tabs.Properties">
+-@@ -53,4 +67,8 @@
+-       </map>
+-     </option>
+-   </component>
+-+  <component name="VcsManagerConfiguration">
+-+    <MESSAGE value="Committing death onto intellij for weird setup stuff" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="Committing death onto intellij for weird setup stuff" />
+-+  </component>
+- </project>
+-\ No newline at end of file
+-Index: Server/.idea/.gitignore
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/Server/.idea/.gitignore b/Server/.idea/.gitignore
+-new file mode 100644
+---- /dev/null	(date 1669672792380)
+-+++ b/Server/.idea/.gitignore	(date 1669672792380)
+-@@ -0,0 +1,3 @@
+-+# Default ignored files
+-+/shelf/
+-+/workspace.xml
+-Index: Server/.idea/misc.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/Server/.idea/misc.xml b/Server/.idea/misc.xml
+-new file mode 100644
+---- /dev/null	(date 1669672809389)
+-+++ b/Server/.idea/misc.xml	(date 1669672809389)
+-@@ -0,0 +1,6 @@
+-+<?xml version="1.0" encoding="UTF-8"?>
+-+<project version="4">
+-+  <component name="ProjectRootManager" version="2" project-jdk-name="openjdk-18" project-jdk-type="JavaSDK">
+-+    <output url="file://$PROJECT_DIR$/out" />
+-+  </component>
+-+</project>
+-\ No newline at end of file
+-Index: Server/.idea/modules.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/Server/.idea/modules.xml b/Server/.idea/modules.xml
+-new file mode 100644
+---- /dev/null	(date 1669672809371)
+-+++ b/Server/.idea/modules.xml	(date 1669672809371)
+-@@ -0,0 +1,8 @@
+-+<?xml version="1.0" encoding="UTF-8"?>
+-+<project version="4">
+-+  <component name="ProjectModuleManager">
+-+    <modules>
+-+      <module fileurl="file://$PROJECT_DIR$/Server.iml" filepath="$PROJECT_DIR$/Server.iml" />
+-+    </modules>
+-+  </component>
+-+</project>
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_51_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_51_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_51_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_51_PM_[Changes]/shelved.patch	(revision 3fb53772d094fbeeb6329eabc0254a3221b0f82a)
++++ /dev/null	(revision 3fb53772d094fbeeb6329eabc0254a3221b0f82a)
+@@ -1,116 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"aa75681e-15bc-4bbf-b40f-69fe1a524219\" name=\"Changes\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2IC4hxyP3eRhwsnSkkgU6M6hAWu\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"jdk.selected.JAVA_MODULE\": \"openjdk-18\",\r\n    \"project.structure.last.edited\": \"Modules\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"aa75681e-15bc-4bbf-b40f-69fe1a524219\" name=\"Changes\" comment=\"\" />\r\n      <created>1669672353142</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1669672353142</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision f1026ce6a45cb142e4ef07bc3ebe07c9c9503aed)
+-+++ b/.idea/workspace.xml	(date 1669674660713)
+-@@ -4,7 +4,13 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="aa75681e-15bc-4bbf-b40f-69fe1a524219" name="Changes" comment="" />
+-+    <list default="true" id="aa75681e-15bc-4bbf-b40f-69fe1a524219" name="Changes" comment="Committing death onto intellij for weird setup stuff">
+-+      <change afterPath="$PROJECT_DIR$/Server/.idea/.gitignore" afterDir="false" />
+-+      <change afterPath="$PROJECT_DIR$/Server/.idea/misc.xml" afterDir="false" />
+-+      <change afterPath="$PROJECT_DIR$/Server/.idea/modules.xml" afterDir="false" />
+-+      <change afterPath="$PROJECT_DIR$/Server/.idea/vcs.xml" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-+    </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+-@@ -40,6 +46,14 @@
+-       <option name="presentableId" value="Default" />
+-       <updated>1669672353142</updated>
+-     </task>
+-+    <task id="LOCAL-00001" summary="Committing death onto intellij for weird setup stuff">
+-+      <created>1669672718273</created>
+-+      <option name="number" value="00001" />
+-+      <option name="presentableId" value="LOCAL-00001" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1669672718273</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="2" />
+-     <servers />
+-   </component>
+-   <component name="Vcs.Log.Tabs.Properties">
+-@@ -53,4 +67,8 @@
+-       </map>
+-     </option>
+-   </component>
+-+  <component name="VcsManagerConfiguration">
+-+    <MESSAGE value="Committing death onto intellij for weird setup stuff" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="Committing death onto intellij for weird setup stuff" />
+-+  </component>
+- </project>
+-\ No newline at end of file
+-Index: Server/.idea/modules.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/Server/.idea/modules.xml b/Server/.idea/modules.xml
+-new file mode 100644
+---- /dev/null	(date 1669674660727)
+-+++ b/Server/.idea/modules.xml	(date 1669674660727)
+-@@ -0,0 +1,8 @@
+-+<?xml version="1.0" encoding="UTF-8"?>
+-+<project version="4">
+-+  <component name="ProjectModuleManager">
+-+    <modules>
+-+      <module fileurl="file://$PROJECT_DIR$/Server.iml" filepath="$PROJECT_DIR$/Server.iml" />
+-+    </modules>
+-+  </component>
+-+</project>
+-\ No newline at end of file
+-Index: Server/.idea/vcs.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/Server/.idea/vcs.xml b/Server/.idea/vcs.xml
+-new file mode 100644
+---- /dev/null	(date 1669674660703)
+-+++ b/Server/.idea/vcs.xml	(date 1669674660703)
+-@@ -0,0 +1,6 @@
+-+<?xml version="1.0" encoding="UTF-8"?>
+-+<project version="4">
+-+  <component name="VcsDirectoryMappings">
+-+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+-+  </component>
+-+</project>
+-\ No newline at end of file
+-Index: Server/.idea/misc.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/Server/.idea/misc.xml b/Server/.idea/misc.xml
+-new file mode 100644
+---- /dev/null	(date 1669674660723)
+-+++ b/Server/.idea/misc.xml	(date 1669674660723)
+-@@ -0,0 +1,6 @@
+-+<?xml version="1.0" encoding="UTF-8"?>
+-+<project version="4">
+-+  <component name="ProjectRootManager" version="2" project-jdk-name="openjdk-18" project-jdk-type="JavaSDK">
+-+    <output url="file://$PROJECT_DIR$/out" />
+-+  </component>
+-+</project>
+-\ No newline at end of file
+-Index: Server/.idea/.gitignore
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/Server/.idea/.gitignore b/Server/.idea/.gitignore
+-new file mode 100644
+---- /dev/null	(date 1669674660719)
+-+++ b/Server/.idea/.gitignore	(date 1669674660719)
+-@@ -0,0 +1,3 @@
+-+# Default ignored files
+-+/shelf/
+-+/workspace.xml
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_51_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_51_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_51_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_51_PM__Changes_.xml	(revision 3fb53772d094fbeeb6329eabc0254a3221b0f82a)
++++ /dev/null	(revision 3fb53772d094fbeeb6329eabc0254a3221b0f82a)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_11_28_2022_5_51_PM_[Changes]" date="1669675912254" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_51_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 11/28/2022 5:51 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_30_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_30_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_30_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_30_PM__Changes_.xml	(revision 3fb53772d094fbeeb6329eabc0254a3221b0f82a)
++++ /dev/null	(revision 3fb53772d094fbeeb6329eabc0254a3221b0f82a)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_11_28_2022_5_30_PM_[Changes]" date="1669674660893" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2022_5_30_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 11/28/2022 5:30 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: Server/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"c5a421c1-db18-445f-b919-b66ae461ca0e\" name=\"Changes\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2IMueGWxWB3sOvwHrAv0KLxsdkX\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"c5a421c1-db18-445f-b919-b66ae461ca0e\" name=\"Changes\" comment=\"\" />\r\n      <created>1670003866359</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1670003866359</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Server/.idea/workspace.xml b/Server/.idea/workspace.xml
+--- a/Server/.idea/workspace.xml	(revision 3fb53772d094fbeeb6329eabc0254a3221b0f82a)
++++ b/Server/.idea/workspace.xml	(date 1670010270400)
+@@ -1,7 +1,23 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="c5a421c1-db18-445f-b919-b66ae461ca0e" name="Changes" comment="" />
++    <list default="true" id="c5a421c1-db18-445f-b919-b66ae461ca0e" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Database.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Menu.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/RealStart.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/RealStart.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Start.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../Client/src/RealStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/RealStart.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/database.csv" beforeDir="false" afterPath="$PROJECT_DIR$/database.csv" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Server/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/ClientHandler.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Server/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Database.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Server/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/Start.class" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -19,12 +35,26 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
++  <component name="RunManager">
++    <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="Start" />
++      <module name="Server" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Application.Start" />
++      </list>
++    </recent_temporary>
++  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"aa75681e-15bc-4bbf-b40f-69fe1a524219\" name=\"Changes\" comment=\"Committing death onto intellij for weird setup stuff\">\r\n      <change afterPath=\"$PROJECT_DIR$/Server/.idea/.gitignore\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Server/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Server/.idea/modules.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Server/.idea/vcs.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2IC4hxyP3eRhwsnSkkgU6M6hAWu\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"jdk.selected.JAVA_MODULE\": \"openjdk-18\",\r\n    \"project.structure.last.edited\": \"Modules\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"aa75681e-15bc-4bbf-b40f-69fe1a524219\" name=\"Changes\" comment=\"\" />\r\n      <created>1669672353142</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1669672353142</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Committing death onto intellij for weird setup stuff\">\r\n      <created>1669672718273</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1669672718273</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Committing death onto intellij for weird setup stuff\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Committing death onto intellij for weird setup stuff\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 3fb53772d094fbeeb6329eabc0254a3221b0f82a)
++++ b/.idea/workspace.xml	(date 1670010281019)
+@@ -5,11 +5,10 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="aa75681e-15bc-4bbf-b40f-69fe1a524219" name="Changes" comment="Committing death onto intellij for weird setup stuff">
+-      <change afterPath="$PROJECT_DIR$/Server/.idea/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Server/.idea/misc.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Server/.idea/modules.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Server/.idea/vcs.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Client/src/RealStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/RealStart.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Server/database.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Server/database.csv" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -27,16 +26,16 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "jdk.selected.JAVA_MODULE": "openjdk-18",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.15",
+-    "project.structure.side.proportion": "0.2"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-18&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -53,7 +52,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1669672718273</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="Committing death onto intellij for weird setup stuff">
++      <created>1670005890729</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1670005890729</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+Index: Client/src/RealStart.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class RealStart {\r\n    public static void main(String[] args) {\r\n        Start start = new Start();\r\n\r\n        start.main();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Client/src/RealStart.java b/Client/src/RealStart.java
+--- a/Client/src/RealStart.java	(revision 3fb53772d094fbeeb6329eabc0254a3221b0f82a)
++++ b/Client/src/RealStart.java	(date 1670010235974)
+@@ -4,4 +4,4 @@
+ 
+         start.main();
+     }
+-}
++}
+\ No newline at end of file
+Index: Client/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"4a3dfe20-60ba-48cb-8b31-54087cfdeef5\" name=\"Changes\" comment=\"finished getMostCommonWordsTest\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2IMueuJiF4JrTqHYoh4dBRcimLx\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"4a3dfe20-60ba-48cb-8b31-54087cfdeef5\" name=\"Changes\" comment=\"\" />\r\n      <created>1670003871749</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1670003871749</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"finished getMostCommonWordsTest\">\r\n      <created>1670008399022</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670008399022</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"finished getMostCommonWordsTest\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"finished getMostCommonWordsTest\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Client/.idea/workspace.xml b/Client/.idea/workspace.xml
+--- a/Client/.idea/workspace.xml	(revision 3fb53772d094fbeeb6329eabc0254a3221b0f82a)
++++ b/Client/.idea/workspace.xml	(date 1670034669871)
+@@ -1,8 +1,22 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
+   <component name="ChangeListManager">
+     <list default="true" id="4a3dfe20-60ba-48cb-8b31-54087cfdeef5" name="Changes" comment="finished getMostCommonWordsTest">
++      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Client/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Database.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Client/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Menu.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Client/RealStart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/RealStart.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Client/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Start.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/RealStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RealStart.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../Server/database.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/database.csv" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/Server/ClientHandler.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/Server/Database.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/Server/Start.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />

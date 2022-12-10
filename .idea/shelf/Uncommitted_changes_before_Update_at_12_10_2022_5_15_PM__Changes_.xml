@@ -1,0 +1,39 @@
+<changelist name="Uncommitted_changes_before_Update_at_12_10_2022_5_15_PM_[Changes]" date="1670710525178" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_10_2022_5_15_PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 12/10/2022 5:15 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="Client/src/Menu.class" />
+    <option name="AFTER_PATH" value="Client/src/Menu.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_10_2022_5_15_PM_[Changes]/Menu.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Client/src/RealStart.class" />
+    <option name="AFTER_PATH" value="Client/src/RealStart.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_10_2022_5_15_PM_[Changes]/RealStart.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Client/src/Start.class" />
+    <option name="AFTER_PATH" value="Client/src/Start.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_10_2022_5_15_PM_[Changes]/Start.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Client/out/production/Client/Menu.class" />
+    <option name="AFTER_PATH" value="Client/out/production/Client/Menu.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_10_2022_5_15_PM_[Changes]/Menu1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Client/src/Database.class" />
+    <option name="AFTER_PATH" value="Client/src/Database.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_10_2022_5_15_PM_[Changes]/Database.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Client/out/production/Client/Database.class" />
+    <option name="AFTER_PATH" value="Client/out/production/Client/Database.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_10_2022_5_15_PM_[Changes]/Database1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Client/out/production/Client/Start.class" />
+    <option name="AFTER_PATH" value="Client/out/production/Client/Start.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_10_2022_5_15_PM_[Changes]/Start1.class" />
+  </binary>
+</changelist>
