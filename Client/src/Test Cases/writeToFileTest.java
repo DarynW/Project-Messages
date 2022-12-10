@@ -2,6 +2,12 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+/**
+ * This class is used to test the start's writeToFile function
+ *
+ * @author Daryn
+ * @version 12-10-2022
+ */
 public class writeToFileTest {
     static String uuid;
 
