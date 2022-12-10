@@ -4,7 +4,7 @@ public class databaseGetTest {
     //TODO: Yash, for this test to work, I think you need to run the server side as well otherwise
     // there is no database file to test with.
     Database database = new Database();
-    
+
     public void writeTest(String userID) throws Exception {
         database.write(userID, "name", "testUserName");
 

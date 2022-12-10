@@ -4,6 +4,7 @@ import java.nio.file.Path;
 
 public class writeToFileTest {
     static String uuid;
+
     public static void main(String[] args) {
         Start start = new Start();
         String expected = "I like corndogs\nAnd pizzas\nBUT NOT ASPARAGUS\n";
@@ -44,6 +45,7 @@ public class writeToFileTest {
             e.printStackTrace();
         }
     }
+
     public static void tester(String expected) {
         File f = new File("src/Test Cases/uuid");
 
@@ -53,7 +55,7 @@ public class writeToFileTest {
             String uuid = br.readLine() + "_Messages.txt";
             File fActual = new File("src/Test Cases/" + uuid);
             BufferedReader brActual = new BufferedReader(new FileReader(fActual));
-            while (brActual.ready()){
+            while (brActual.ready()) {
                 if (!output.equals("")) {
                     output += "\n";
                 }

@@ -1,5 +1,6 @@
 
 //import scanner and arraylist
+
 import java.util.Scanner;
 //import file
 import java.io.File;
@@ -8,7 +9,7 @@ import java.io.PrintWriter;
 
 /**
  * This class is used for database stuff.
- * 
+ *
  * @author Fischer Lab-13
  * @version 1.0
  */
