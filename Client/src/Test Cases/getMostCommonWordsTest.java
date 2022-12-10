@@ -1,6 +1,12 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+/**
+ * This class is used to test the start's getMostCommonWords function
+ *
+ * @author Daryn
+ * @version 12-10-2022
+ */
 public class getMostCommonWordsTest {
     public static void main(String[] args) {
         ArrayList<String> messages = new ArrayList<>() {
