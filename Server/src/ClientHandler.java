@@ -68,7 +68,7 @@ public class ClientHandler extends Thread {
             writer.println(response);
             // print response
             System.out.println(response);
-            // outputa a new line
+            // output a new line
             writer.flush();
         }
     }

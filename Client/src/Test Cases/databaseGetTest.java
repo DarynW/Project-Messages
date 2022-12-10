@@ -4,7 +4,7 @@ import java.util.Objects;
 /**
  * This class is used to test the database Get function
  *
- * @author yashjha
+ * @author yashjha and Daryn
  * @version 12-10-2022
  */
 public class databaseGetTest {
@@ -14,8 +14,9 @@ public class databaseGetTest {
 
     public void writeTest(String userID) throws Exception {
         Socket socket = new Socket("localhost", 5000);
+        database.createDocument(userID);
         System.out.println("Before write statement");
-        database.write(userID, "name", "testUserName");
+        database.add(userID, "name", "testUserName");
         System.out.println("Past write statement");
 
         String getTest = database.get(userID, "name");
@@ -26,6 +27,7 @@ public class databaseGetTest {
         } else {
             System.out.println("Test failed!");
         }
+        database.delete(userID);
     }
 
     public static void main(String[] args) throws Exception {
