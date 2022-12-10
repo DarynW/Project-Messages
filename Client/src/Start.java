@@ -201,8 +201,7 @@ public class Start {
                     }
                     scanner.close();
                 } catch (Exception e) {
-                    menu.println("File not found");
-                    continue;
+                    e.printStackTrace();
                 }
 
                 // check if the user has blocked this user from messaging them

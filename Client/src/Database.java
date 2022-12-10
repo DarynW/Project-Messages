@@ -87,10 +87,7 @@ public class Database {
 
                 String[] field = new String[2];
                 field[0] = parts[i];
-                if (i + 1 >= parts.length)
-                    field[1] = "";
-                else
-                    field[1] = parts[i + 1];
+                field[1] = parts[i + 1];
                 parsedDocument.add(field);
             }
 
@@ -146,15 +143,11 @@ public class Database {
     }
 
     public void write(String documentID, String key, String value) throws Exception {
-        if (value.equals(""))
-            value = "Nothing Typed";
-
         if (!this.documentExists(documentID)) {
             throw new Exception("Document does not exist");
         }
         if (!this.fieldExists(documentID, key)) {
-            // add the field
-            add(documentID, key, value);
+            throw new Exception("Key does not exist.");
         }
 
         ArrayList<String[][]> documents = readFile();
@@ -173,11 +166,6 @@ public class Database {
     }
 
     public void add(String documentID, String key, String value) throws Exception {
-
-        // replace blank values with null
-        if (value.equals(""))
-            value = "Nothing Typed";
-
         if (!this.documentExists(documentID)) {
             throw new Exception("Document does not exist");
         }
@@ -373,8 +361,6 @@ public class Database {
         for (int i = 0; i < tagArray.length; i++) {
             String tag = tagArray[i];
             String[] tagParts = tag.split(": ");
-            if (tagParts[1] == "")
-                tagParts[1] = "Nada";
             searchTags.add(tagParts);
         }
 
