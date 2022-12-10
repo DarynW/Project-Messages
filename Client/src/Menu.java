@@ -20,7 +20,7 @@ public class Menu {
         // make background black
         frame.getContentPane().setBackground(Color.BLACK);
 
-        // create a button and textbox next to eachother and put it south
+        // create a button and textbox next to each other and put it south
         JPanel south = new JPanel();
         south.setLayout(new FlowLayout());
         button = new JButton("Enter");
@@ -56,7 +56,7 @@ public class Menu {
 
     }
 
-    // Porompts the user for an input and returns a String
+    // Prompts the user for an input and returns a String
     private String getInput() {
         // wait for button to be clicked
         while (!clicked) {

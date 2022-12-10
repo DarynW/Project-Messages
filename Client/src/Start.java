@@ -1,5 +1,6 @@
 
 //import arraylist
+
 import java.util.ArrayList;
 // hashmap
 import java.util.HashMap;
@@ -62,7 +63,7 @@ public class Start {
     }
 
     // method that finds and sorts the most common list of words from an arraylist
-    // of messsage strings
+    // of message strings
     public ArrayList<String> getMostCommonWords(ArrayList<String> messages) {
 
         // if the size is 0 return an empty list
@@ -150,7 +151,7 @@ public class Start {
                 if (blocked != null)
                     blockedArray = blocked.split(",");
 
-                // add TO THE FUCKING ARRAy
+                // add to the array
                 ArrayList<String> blockedList = new ArrayList<String>();
                 for (String block : blockedArray) {
                     blockedList.add(block);
@@ -163,7 +164,7 @@ public class Start {
                 database.write(ourUserId, "blockedUsers", blockedString);
             } else if (message.toLowerCase().equals("edit")) {
                 // take in message id and edit it in the database
-                // taker in message id and delete it from database
+                // take in message id and delete it from database
                 String messageNumber = getStringInput("Enter message number to delete");
                 // get message id from messages
                 String messageId = messages.get(Integer.parseInt(messageNumber));
@@ -171,7 +172,7 @@ public class Start {
                 database.write(messageId, "message", newMessage);
 
             } else if (message.toLowerCase().equals("delete")) {
-                // taker in message id and delete it from database
+                // take in message id and delete it from database
                 String messageNumber = getStringInput("Enter message number to delete");
                 // get message id from messages
                 String messageId = messages.get(Integer.parseInt(messageNumber));
@@ -185,9 +186,7 @@ public class Start {
                 }
 
                 this.writeToFile(".", text);
-            }
-
-            else if (message.toLowerCase().equals("upload")) {
+            } else if (message.toLowerCase().equals("upload")) {
                 // prompt for txt file path
                 String path = getStringInput("Enter path to file");
                 // read file with scanner
@@ -319,7 +318,7 @@ public class Start {
         menu.go();
 
         try {
-            // intatinatiate the database
+            // instantiate the database
             database = new Database();
 
             while (true) {
@@ -339,18 +338,18 @@ public class Start {
                         return;
                     }
 
-                    // check if password matches, if it doesnt, throw error and end program
+                    // check if password matches, if it doesn't, throw error and end program
                     if (!database.get(userId, "password").equals(password)) {
                         menu.println("Incorrect password");
                         return;
                     }
 
-                    // ask if theyre buying or selling
+                    // ask if they're buying or selling
                     int optionPicked = getIntInput("1. Buyer\n2. Seller\n3. Delete Account");
 
                     switch (optionPicked) {
                         case 1:
-                            // if theyre buying, display the buying menu
+                            // if they're buying, display the buying menu
                             // loop infinitely until option 1 is selected
                             while (true) {
                                 // list menu of options for viewing messages, viewing stores, deleting account
@@ -415,9 +414,9 @@ public class Start {
                                             menu.println((i + 1) + ". " + database.get(stores.get(i), "name")
                                                     + " | Messages Sent: "
                                                     + database
-                                                            .searchAllByField(
-                                                                    "seller: " + database.get(stores.get(i), "owner"))
-                                                            .size()
+                                                    .searchAllByField(
+                                                            "seller: " + database.get(stores.get(i), "owner"))
+                                                    .size()
                                                     + " | " + database.get(stores.get(i), "description"));
                                         }
 
@@ -455,10 +454,10 @@ public class Start {
 
                             }
                         case 2:
-                            // if theyre selling, display the selling menu
+                            // if they're selling, display the selling menu
                             // loop infinitely until option 1 is selected
                             while (true) {
-                                // here we list all of the stores
+                                // here we list all the stores
                                 // present menu where they can view their stores, create a store, view their
                                 // messages or delete their account or exit the programs
                                 int option = getIntInput(
@@ -493,7 +492,7 @@ public class Start {
                                         // get the store id
                                         String storeId = stores.get(input - 1);
 
-                                        // list the most common words used in this users messages
+                                        // list the most common words used in this user's messages
                                         ArrayList<String> messages = database.searchAllByField("seller: " + userId);
 
                                         // create a hashmap to store the words and their frequency
@@ -615,11 +614,11 @@ public class Start {
                                 }
                             }
                         case 3:
-                            // if theyre deleting their account, delete their account
+                            // if they're deleting their account, delete their account
                             database.delete(userId);
                             return;
                         default:
-                            // if theyre doing something else, throw an error
+                            // if they're doing something else, throw an error
                             menu.println("Invalid input");
                             return;
                     }
@@ -651,7 +650,7 @@ public class Start {
                     // notify that they have registered and end program
                     menu.println("You have registered.");
                 } else {
-                    // if theyre doing something else
+                    // if they're doing something else
                     return;
                 }
             }

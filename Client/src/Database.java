@@ -1,5 +1,6 @@
 
 //import arraylist
+
 import java.util.ArrayList;
 //import printwriter
 import java.io.PrintWriter;
@@ -11,7 +12,7 @@ import java.io.*;
 
 /**
  * This class is used for database stuff.
- * 
+ *
  * @author Fischer Lab-13
  * @version 1.0
  */
@@ -288,7 +289,7 @@ public class Database {
     /**
      * Searches with multiple tag criteria and values and returns an array of unique
      * document ID's
-     * 
+     *
      * @param tags - String of tags and values to search for Example: "tag1: value1,
      *             tag2: value2, tag3: value3, etc."
      *             </p>
@@ -346,7 +347,6 @@ public class Database {
      *             </p>
      *             requestName ([String name of buyer]) *Used for Request dataType
      *             </p>
-     *
      * @return ArrayList/<Strings> - Array of document ID's
      * @throws Exception
      */

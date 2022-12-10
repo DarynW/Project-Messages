@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa75681e-15bc-4bbf-b40f-69fe1a524219" name="Changes" comment="Committing death onto intellij for weird setup stuff">
+    <list default="true" id="aa75681e-15bc-4bbf-b40f-69fe1a524219" name="Changes" comment="Committing unversioned files for the testcases">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Test Cases/databaseGetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Test Cases/databaseGetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Test Cases/getMostCommonWordsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Test Cases/getMostCommonWordsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Test Cases/writeToFileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Test Cases/writeToFileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Start.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +58,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669672718273</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Committing unversioned files for the testcases">
+      <created>1670710652814</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670710652815</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -66,6 +81,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Committing death onto intellij for weird setup stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Committing death onto intellij for weird setup stuff" />
+    <MESSAGE value="Committing unversioned files for the testcases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Committing unversioned files for the testcases" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/out/production/Client/Database.class</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
