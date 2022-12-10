@@ -1,5 +1,6 @@
 
-// imort required packages for network communication
+// import required packages for network communication
+
 import java.io.*;
 import java.net.*;
 
@@ -8,7 +9,7 @@ public class Start {
     static int PORT = 5000;
 
     public static void main(String[] args) {
-        // init database
+        // initiate database
         Database db = new Database("database.csv");
 
         ServerSocket serverSocket = null;

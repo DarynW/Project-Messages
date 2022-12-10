@@ -40,7 +40,6 @@ public class getMostCommonWordsTest {
         };
 
 
-
         Start start = new Start();
         ArrayList<String> output = new ArrayList<>();
         output = start.getMostCommonWords(messages);
@@ -62,7 +61,7 @@ public class getMostCommonWordsTest {
                 add("and");
             }
         };
-        if (output.toString().equals(expected.toString())){
+        if (output.toString().equals(expected.toString())) {
             System.out.println("Test Passed!");
         } else {
             System.out.println("Test Failed!");
