@@ -50,7 +50,6 @@ public class ClientHandler extends Thread {
                 // read from the database
                 try {
                     response = db.readFile().replaceAll("\n", "\\{\\$\\%\\^\\&\\}");
-
                     if (response.equals("")) {
                         response = "No data";
                     }
