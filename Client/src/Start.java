@@ -131,13 +131,15 @@ public class Start {
 
             // display messages
             for (int i = 0; i < messages.size(); i++) {
-                menu.println(i + ". Message: " + database.get(messages.get(i), "message") + ", ID: " + messages.get(i)
-                        + ", Author: " + database.get(database.get(messages.get(i), "author"), "email"));
+                menu.println(i + ". Message: " + database.get(messages.get(i), "message")
+                        + ", ID: " + messages.get(i) + ", Author: "
+                        + database.get(database.get(messages.get(i), "author"), "email"));
             }
 
             // get message input
             String message = getStringInput(
-                    "Enter message or type \nExit to Exit \nBlock to Block User\nEdit to Edit Message\nDelete to Delete Message\nDownload to Download Messages\nUpload to Upload Messages");
+                    "Enter message or type \nExit to Exit \nBlock to Block User\nEdit to Edit Message" +
+                            "\nDelete to Delete Message\nDownload to Download Messages\nUpload to Upload Messages");
 
             // if message is exit, exit the method
             if (message.toLowerCase().equals("exit")) {
@@ -181,11 +183,8 @@ public class Start {
                 // download all messages to a text file
                 String text = "";
                 for (int i = 0; i < messages.size(); i++) {
-                    text += "Message: " + database.get(messages.get(i), "message") +
-                            ", ID: " + messages.get(i) +
-                            ", Author: " + database.get(database.get(messages.get(i), "author"), "email") +
-                            ", Timestamp: " + database.get(messages.get(i), "timestamp") +
-                            "\n";
+                    text += "Message: " + database.get(messages.get(i), "message") + ", ID: " + messages.get(i)
+                            + ", Author: " + database.get(database.get(messages.get(i), "author"), "email");
                 }
 
                 this.writeToFile(".", text);
@@ -417,9 +416,9 @@ public class Start {
                                             menu.println((i + 1) + ". " + database.get(stores.get(i), "name")
                                                     + " | Messages Sent: "
                                                     + database
-                                                            .searchAllByField(
-                                                                    "seller: " + database.get(stores.get(i), "owner"))
-                                                            .size()
+                                                    .searchAllByField(
+                                                            "seller: " + database.get(stores.get(i), "owner"))
+                                                    .size()
                                                     + " | " + database.get(stores.get(i), "description"));
                                         }
 
@@ -464,7 +463,8 @@ public class Start {
                                 // present menu where they can view their stores, create a store, view their
                                 // messages or delete their account or exit the programs
                                 int option = getIntInput(
-                                        "1. View stores\n2. Create store\n3. View Buyers & Messages\n4. Delete account\n5. Search User To Message\n6. Exit");
+                                        "1. View stores\n2. Create store" +
+                                                "\n3. View messages\n4. Delete account\n5. Search User To Message\n6. Exit");
 
                                 // switch statement for the menu
                                 switch (option) {
