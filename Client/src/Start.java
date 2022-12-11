@@ -181,8 +181,11 @@ public class Start {
                 // download all messages to a text file
                 String text = "";
                 for (int i = 0; i < messages.size(); i++) {
-                    text += "Message: " + database.get(messages.get(i), "message") + ", ID: " + messages.get(i)
-                            + ", Author: " + database.get(database.get(messages.get(i), "author"), "email");
+                    text += "Message: " + database.get(messages.get(i), "message") +
+                            ", ID: " + messages.get(i) +
+                            ", Author: " + database.get(database.get(messages.get(i), "author"), "email") +
+                            ", Timestamp: " + database.get(messages.get(i), "timestamp") +
+                            "\n";
                 }
 
                 this.writeToFile(".", text);
