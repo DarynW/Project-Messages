@@ -1,4 +1,4 @@
-Authors: Andy, Fischer, Darynn and Yash
+Authors: Andy, Fischer, Daryn and Yash
 Date: 12/10/2022
 
 There are two seperate README files that can be read inside the Client and Server directory's.
