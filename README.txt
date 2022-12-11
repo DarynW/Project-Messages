@@ -7,4 +7,3 @@ The Client and Server are two separate projects and are intended to be run seper
 Doing this may be tedious, and it is recommended that the projects are opened seperately in seperate IDE windows.
 
 Fischer submitted every file to vocareum and brightspace.
-
