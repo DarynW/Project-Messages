@@ -20,4 +20,3 @@ DATABASE
 2) Corruption
     In the unlikely scenario that the program (client or server) crashes or has issues, it is likely that the database file is corrupted. 
     In this case, the database file can be deleted and replaced with a new one.
-
