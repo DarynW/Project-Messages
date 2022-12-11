@@ -414,9 +414,9 @@ public class Start {
                                             menu.println((i + 1) + ". " + database.get(stores.get(i), "name")
                                                     + " | Messages Sent: "
                                                     + database
-                                                    .searchAllByField(
-                                                            "seller: " + database.get(stores.get(i), "owner"))
-                                                    .size()
+                                                            .searchAllByField(
+                                                                    "seller: " + database.get(stores.get(i), "owner"))
+                                                            .size()
                                                     + " | " + database.get(stores.get(i), "description"));
                                         }
 
@@ -461,7 +461,7 @@ public class Start {
                                 // present menu where they can view their stores, create a store, view their
                                 // messages or delete their account or exit the programs
                                 int option = getIntInput(
-                                        "1. View stores\n2. Create store\n3. View messages\n4. Delete account\n5. Search User To Message\n6. Exit");
+                                        "1. View stores\n2. Create store\n3. View Buyers & Messages\n4. Delete account\n5. Search User To Message\n6. Exit");
 
                                 // switch statement for the menu
                                 switch (option) {
